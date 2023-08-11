@@ -7,7 +7,7 @@ import timeit
 
 # Configuation
 parser = argparse.ArgumentParser()
-parser.add_argument("-m","--method_name", type = str, default = "AutoHomotopy")
+parser.add_argument("-m","--method_name", type = str, default = "autohomotopy")
 parser.add_argument("-f","--func_name", type = str, default = "ackley")
 parser.add_argument("-T", "--max_timestep", type = int, default = 20)
 args = parser.parse_args()
@@ -20,7 +20,7 @@ x_range = np.array(domain_range[func_name])
 # Training loop
 start = timeit.default_timer()
 
-if method_name == 'AutoHomotopy':
+if method_name == 'autohomotopy':
     algorithm = AutoHomotopyTrainer(net=NeuralNet(), 
                                     x_range = x_range, 
                                     init_func_name=func_name, 

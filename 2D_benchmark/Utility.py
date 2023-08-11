@@ -117,17 +117,19 @@ class PINNsTrainer(object):
         xmax = self.x_range[:,1]
         x1 = np.linspace(xmin[0], xmax[0], self.num_grids)
         x2 = np.linspace(xmin[1], xmax[1], self.num_grids)
+        x1_init, x2_init = np.meshgrid(x1, x2)
         t_vec = np.linspace(0, self.tmax, self.tmax+1)
         X1, X2, T = np.meshgrid(x1, x2, t_vec)
         init_func = pick_function(self.init_func_name) # pick the initial function w.r.t. the function name
-        self.input = torch.tensor(np.c_[X1.ravel(), X2.ravel(), T.ravel()],requires_grad=True, dtype=torch.float32).to(self.device)
-        self.u0 = torch.tensor(init_func(X1.ravel(), X2.ravel()),requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
+        self.features = torch.tensor(np.c_[X1.ravel(), X2.ravel()], requires_grad=True, dtype=torch.float32).to(self.device)
+        self.t = torch.tensor(T.ravel().reshape(-1,1), requires_grad=True, dtype=torch.float32).to(self.device)
+        self.u0 = torch.tensor(init_func(x1_init.ravel(), x2_init.ravel()),requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
 
     # Define the PDE function for each input feature
     def pde_loss(self, t, feature, u):
         # Compute the gradient of f
-        du_dt = torch.autograd.grad(u, t, create_graph=True)[0] # Compute the time derivative of f
-        du_dx = torch.autograd.grad(u, feature, create_graph=True, retain_graph= True)[0]
+        du_dt = torch.autograd.grad(u, t, grad_outputs=torch.ones_like(u), create_graph=True,retain_graph=True)[0] # Compute the time derivative of f
+        du_dx = torch.autograd.grad(u, feature, grad_outputs=torch.ones_like(u), create_graph=True, retain_graph= True)[0]
         
         # Compute the Hessian of f
         hessian = torch.zeros((feature.shape[1], feature.shape[1]))
@@ -148,8 +150,8 @@ class PINNsTrainer(object):
     def train(self):
         for epoch in range(self.num_epochs):
             self.optimizer.zero_grad()
-            F_pred = self.net(self.input)
-            loss = self.pde_loss(self.input[:,:2], self.input[:,2], self.net)
+            F_pred = self.net(torch.cat((self.features, self.t), dim=1))
+            loss = self.pde_loss(self.t, self.features, F_pred) # pde(t, x, u)
 
             # Incorporate the boundary condition at t=0
             initial_condition_loss = torch.mean(torch.square(F_pred.reshape((self.num_grids*self.num_grids, self.tmax+1))[:,0] - self.u0))
@@ -161,3 +163,13 @@ class PINNsTrainer(object):
             print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}, Initial Condition Loss: {initial_condition_loss.item()}")
         
         torch.save(self.net.state_dict(), "./models/{}_{}.pth".format(self.method, self.init_func_name))
+
+
+# class GD(object):
+#     def __init__(self,
+#                  net: nn.Module,
+#                  model_path: str,
+#                  x_range: np.ndarray,
+#                  init_func_name: str,
+#                  seed: int,):
+#         pass
