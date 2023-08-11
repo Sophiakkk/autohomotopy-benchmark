@@ -9,7 +9,7 @@ import timeit
 parser = argparse.ArgumentParser()
 parser.add_argument("-m","--method_name", type = str, default = "autohomotopy")
 parser.add_argument("-f","--func_name", type = str, default = "ackley")
-parser.add_argument("-T", "--max_timestep", type = int, default = 20)
+parser.add_argument("-T", "--max_timestep", type = int, default = 50)
 args = parser.parse_args()
 
 # Parameters
@@ -37,4 +37,9 @@ elif method_name == 'pinns':
     algorithm.train()
 
 stop = timeit.default_timer()
-print('Time: ', stop - start)
+
+with open ("./results/"+method_name+"_"+func_name+"_train.txt", "w") as f:
+    f.write("Method: "+method_name+"\n")
+    f.write("Function: "+func_name+"\n")
+    f.write("Max Timestep: "+str(args.max_timestep)+"\n")
+    f.write("Running Time: "+str(stop-start)+"\n")
