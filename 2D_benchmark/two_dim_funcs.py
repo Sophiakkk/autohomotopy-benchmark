@@ -34,34 +34,27 @@ def eggholder(x,y):
 def griewank(x,y):
     return 1 + (x**2 + y**2)/4000 - np.cos(x)*np.cos(y/np.sqrt(2))
 
-# langermann function
+# # langermann function (SFU)
 # def langermann(x,y):
 #     a = np.array([[3,5],[5,2],[2,1],[1,4],[7,9]])
 #     c = np.array([1,2,5,2,3])
 #     m = 5
 #     result = 0
+#     input = np.hstack((x,y)).reshape(-1,2)
 #     for i in range(m):
-#         result += c[i]*np.exp(-1/np.pi*np.sum((np.array([x,y]) - a[i,:])**2))
+#         result += c[i]*np.exp(-1/np.pi*np.sum((input - a[i,:])**2,axis=1))*np.cos(np.pi*np.sum((input - a[i,:])**2,axis=1))
 #     return result
 
-# # langermann function
-# def langermann(x,y):
-#     a = np.array([[3,5],[5,2],[2,1],[1,4],[7,9]])
-#     c = np.array([1,2,5,2,3])
-#     m = 5
-#     result = 0
-#     for i in range(m):
-#         result += -c[i]*np.exp(-1/np.pi*np.sum((np.array([x,y]) - a[i,:])**2))
-#     return result
-
-# langermann function
+# langermann function (another paper)
 def langermann(x,y):
     A = np.array([[9.681,0.667],[9.400,2.041],[8.025,9.152],[2.196,0.415],[8.074,8.777]])
     c = np.array([0.806,0.517,1.5,0.908,0.965])
     m = 5
     result = 0
+    input = np.hstack((x,y)).reshape(-1,2)
+    print(input.shape)
     for i in range(m):
-        result += -c[i]*np.exp(-1/np.pi*np.sum((np.array([x,y]) - A[i,:])**2))
+        result += -c[i]*np.exp(-1/np.pi*np.sum((input - A[i,:])**2, axis = 1))*np.cos(np.pi*np.sum((input - A[i,:])**2, axis = 1))
     return result
 
 # levy function
@@ -134,13 +127,23 @@ def pick_function(function):
 # x = np.linspace(0,10,100)
 # y = np.linspace(0,10,100)
 # X,Y = np.meshgrid(x,y)
-# Z = langermann(X,Y)
+# x_vec = X.ravel().reshape(-1,1)
+# y_vec = Y.ravel().reshape(-1,1)
+# print(x_vec.shape)
+# input = np.hstack((x_vec,y_vec))
+# print(input.shape)
+# Z = langermann(x_vec,y_vec)
+# Z = Z.reshape(X.shape)
 
+# # test optimizer
+# input = np.array([9.6810707,0.6666515])
+# # input = np.array([2.00299219,1.006096])
+# print(langermann(input[0],input[1]))
+
+# # test plot
 # fig = plt.figure()
 # ax = plt.axes(projection='3d')
+# ax.set_xlim(10,0)
 # ax.plot_surface(X,Y,Z, rstride=1, cstride=1,
 #                 cmap='viridis',edgecolor='none')
 # plt.show()
-
-# print(langermann(2.00299219,1.006096))
-# print(langermann(9.6810707,0.6666515))
