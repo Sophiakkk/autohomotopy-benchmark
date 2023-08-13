@@ -12,11 +12,7 @@ import numdifftools as nd
 SEED_list = [1,2,3,4,5,6,7,8,9,10]
 
 total_iteration = 10000
-gamma = 0.999
 beta = 0.001
-eta=0.001
-t = 10
-M = 50
 final_result = []
 
 x_optimal = dyhotomy(0.5, 0.6, 0.0001)

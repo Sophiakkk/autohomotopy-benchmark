@@ -11,7 +11,7 @@ import numdifftools as nd
 
 def grad_estimate(t, M, x, f_0):
     d = 1
-    grad_est= 0
+    grad_x= 0
     grad_t = 0
     f_init = f_0(x)
     for i in range(M):
@@ -19,12 +19,12 @@ def grad_estimate(t, M, x, f_0):
             v = np.random.normal(0,1)
             f_tmp = f_0(x+t*v)
             # gradient estimate
-            grad_est += 1/M*v*(f_tmp-f_init)/t
+            grad_x += 1/M*v*(f_tmp-f_init)/t
             # gradient of t
             grad_t += 1/M*(v**2-1)*(f_tmp-f_init)/t**2
         else:
-            grad_x = nd.Gradient(gramacy_and_lee)(x)
-    return grad_est, grad_t
+            grad_x = nd.Gradient(f_0)(x)
+    return grad_x, grad_t
 
 SEED_list = [1,2,3,4,5,6,7,8,9,10]
 
@@ -51,8 +51,6 @@ for seed in SEED_list:
         if t>0:
             # t = gamma*t
             t = np.maximum(np.minimum(t*gamma,t-eta*grad_t), 1e-10)
-    # print('final x for seed {}'.format(seed),x)
-    # final_result.append(x)
     print('final error for seed {}'.format(seed),np.linalg.norm(x-x_optimal))
     final_result.append(np.linalg.norm(x-x_optimal))
 
