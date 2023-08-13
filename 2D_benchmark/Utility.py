@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from two_dim_funcs import *
+import numdifftools as nd
 
 
 # your algorithm is class(object):
@@ -61,7 +62,7 @@ class AutoHomotopyTrainer(object):
         features = np.c_[X1.ravel(), X2.ravel()]
         init_func = pick_function(self.init_func_name) # pick the initial function w.r.t. the function name
         self.features = torch.tensor(features, requires_grad=True, dtype=torch.float32).to(self.device)
-        self.u0 = torch.tensor(init_func(features[:,0],features[:,1]), requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
+        self.u0 = torch.tensor(init_func(X1.ravel().reshape(-1,1),X2.ravel().reshape(-1,1)), requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
 
     def train(self):
         for t in range(self.tmax+1):
@@ -123,7 +124,7 @@ class PINNsTrainer(object):
         init_func = pick_function(self.init_func_name) # pick the initial function w.r.t. the function name
         self.features = torch.tensor(np.c_[X1.ravel(), X2.ravel()], requires_grad=True, dtype=torch.float32).to(self.device)
         self.t = torch.tensor(T.ravel().reshape(-1,1), requires_grad=True, dtype=torch.float32).to(self.device)
-        self.u0 = torch.tensor(init_func(x1_init.ravel(), x2_init.ravel()),requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
+        self.u0 = torch.tensor(init_func(X1.ravel().reshape(-1,1),X2.ravel().reshape(-1,1)), requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
 
     # Define the PDE function for each input feature
     def pde_loss(self, t, feature, u):
@@ -164,12 +165,198 @@ class PINNsTrainer(object):
         
         torch.save(self.net.state_dict(), "./models/{}_{}.pth".format(self.method, self.init_func_name))
 
+class GDEvaluator(object):
+    def __init__(self,
+                 x_range: np.ndarray,
+                 tmax: int,
+                 init_func_name: str,
+                 seed: int,
+                 x_opt: np.ndarray,
+                 total_iterations: int = 10000,
+                 step_size: float = 0.001,
+                 ):
+        self.seed = seed
+        self.init_func = pick_function(init_func_name)
+        self.xmin = x_range[:,0]
+        self.xmax = x_range[:,1]
+        self.tmax = tmax
+        self.total_iterations = total_iterations
+        self.step_size = step_size
+        self.x_opt = x_opt
+    
+    def initalizer(self):
+        # Set the random seed
+        np.random.seed(self.seed)
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
 
-# class GD(object):
-#     def __init__(self,
-#                  net: nn.Module,
-#                  model_path: str,
-#                  x_range: np.ndarray,
-#                  init_func_name: str,
-#                  seed: int,):
-#         pass
+    def evaluate(self):
+        x = self.initial_x
+        # perform gradient descent
+        for i in range(self.total_iterations):
+            grad_x = nd.Gradient(self.init_func)(x)
+            x = x - self.step_size*grad_x
+        error = np.linalg.norm(x-self.x_opt)
+        return error
+        
+class SLGH_r_Evaluator(object):
+    def __init__(self,
+                 x_range: np.ndarray,
+                 tmax: int,
+                 init_func_name: str,
+                 seed: int,
+                 x_opt: np.ndarray,
+                 num_samples, int = 50,
+                 total_iterations: int = 10000,
+                 step_size: float = 0.001,
+                 discount_factor: float = 0.999,
+                 ):
+        self.seed = seed
+        self.init_func = pick_function(init_func_name)
+        self.xmin = x_range[:,0]
+        self.xmax = x_range[:,1]
+        self.tmax = tmax
+        self.total_iterations = total_iterations
+        self.num_samples = num_samples
+        self.step_size = step_size
+        self.x_opt = x_opt
+        self.discount_factor = discount_factor
+    
+    def initalizer(self):
+        # Set the random seed
+        np.random.seed(self.seed)
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+
+    def grad_estimate(self, t, x):
+        d = x.shape[0]
+        grad_x= 0
+        grad_t = 0
+        f_init = self.init_func(x)
+        for i in range(self.num_samples):
+            if t**2>0:
+                v = np.random.normal(0,1,d)
+                f_tmp = self.init_func(x+t*v)
+                # gradient estimate
+                grad_x += 1/self.num_samples*v*(f_tmp-f_init)/t
+                # gradient of t
+                grad_t += 1/self.num_samples*(v**2-1)*(f_tmp-f_init)/t**2
+            else:
+                grad_x = nd.Gradient(self.init_func)(x)
+        return grad_x, grad_t
+    
+    def evaluate(self):
+        for i in range(self.total_iterations):
+            grad_x, grad_t = self.grad_estimate(t,x)
+            x = x - self.step_size*grad_x
+            if t>0:
+                t = self.discount_factor*t
+
+class SLGH_d_Evaluator(object):
+    def __init__(self,
+                 x_range: np.ndarray,
+                 tmax: int,
+                 init_func_name: str,
+                 seed: int,
+                 x_opt: np.ndarray,
+                 discount_factor: float = 0.999,
+                 total_iterations: int = 10000,
+                 step_size: float = 0.001,
+                 threshold: float = 1e-3,
+                 ):
+        self.seed = seed
+        self.init_func = pick_function(init_func_name)
+        self.xmin = x_range[:,0]
+        self.xmax = x_range[:,1]
+        self.tmax = tmax
+        self.total_iterations = total_iterations
+        self.step_size = step_size
+        self.x_opt = x_opt
+        self.discount_factor = discount_factor
+        self.threshold = threshold
+    
+    def initalizer(self):
+        # Set the random seed
+        np.random.seed(self.seed)
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+
+    def grad_estimate(self, t, x):
+        d = x.shape[0]
+        grad_x= 0
+        grad_t = 0
+        f_init = self.init_func(x)
+        for i in range(self.num_samples):
+            if t**2>0:
+                v = np.random.normal(0,1,d)
+                f_tmp = self.init_func(x+t*v)
+                # gradient estimate
+                grad_x += 1/self.num_samples*v*(f_tmp-f_init)/t
+                # gradient of t
+                grad_t += 1/self.num_samples*(v**2-1)*(f_tmp-f_init)/t**2
+            else:
+                grad_x = nd.Gradient(self.init_func)(x)
+        return grad_x, grad_t
+    
+    def evaluate(self):
+        for i in range(self.total_iterations):
+            grad_x, grad_t = self.grad_estimate(t,x)
+            x = x - self.step_size*grad_x
+            if t>0:
+                t = np.maximum(np.minimum(t*self.discount_factor,t-self.threshold*grad_t), 1e-10)
+
+class PINNs_Evaluator(object):
+    def __init__(self,
+                 net: nn.Module,
+                 model_path: str,
+                 x_range: np.ndarray,
+                 tmax: int,
+                 init_func_name: str,
+                 seed: int,
+                 x_opt: np.ndarray,
+                 total_iterations: int = 10000,
+                 step_size: float = 0.001,
+                 ):
+        self.net = net
+        self.net.load_state_dict(torch.load(model_path))
+        self.net.eval()
+        self.seed = seed
+        self.init_func = pick_function(init_func_name)
+        self.xmin = x_range[:,0]
+        self.xmax = x_range[:,1]
+        self.tmax = tmax
+        self.total_iterations = total_iterations
+        self.step_size = step_size
+        self.x_opt = x_opt
+
+    def initalizer(self):
+        # Set the random seed
+        np.random.seed(self.seed)
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+
+
+class AutoHomotopy_Evaluator(object):
+    def __init__(self,
+                 net: nn.Module,
+                 model_path: str,
+                 x_range: np.ndarray,
+                 tmax: int,
+                 init_func_name: str,
+                 seed: int,
+                 x_opt: np.ndarray,
+                 total_iterations: int = 10000,
+                 step_size: float = 0.001,
+                 ):
+        self.net = net
+        self.net.load_state_dict(torch.load(model_path))
+        self.net.eval()
+        self.seed = seed
+        self.init_func = pick_function(init_func_name)
+        self.xmin = x_range[:,0]
+        self.xmax = x_range[:,1]
+        self.tmax = tmax
+        self.total_iterations = total_iterations
+        self.step_size = step_size
+        self.x_opt = x_opt
+
+    def initalizer(self):
+        # Set the random seed
+        np.random.seed(self.seed)
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
