@@ -8,12 +8,12 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:2
 
-declare -a func_list = ("ackley" "holder_table" "cross_in_tray" "bukin" "drop_wave" "eggholder"  "griewank"  "langermann"  "levy"  "levy_13" "rastrigin"  "schaffer2"  "schaffer4"  "schwefel"  "shubert")
-declare -a method_list = ("autohomotopy"  "pinns")
+func_list = ("ackley" "holder_table" "cross_in_tray" "bukin" "drop_wave" "eggholder"  "griewank"  "langermann"  "levy"  "levy_13" "rastrigin"  "schaffer2"  "schaffer4"  "schwefel"  "shubert")
+method_list = ("autohomotopy"  "pinns")
 
-for func in ${func_list[@]}; do
+for func in ${func_list[*]}; do
     echo $func
-    for method in ${method_list[@]}; do
+    for method in ${method_list[*]}; do
         echo $method
         python train.py --func $func --method $method
     done
