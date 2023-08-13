@@ -14,5 +14,9 @@ func_list = ('ackley', 'holder_table', 'cross_in_tray', 'bukin', 'drop_wave',
 method_list = ('autohomotopy', 'pinns')
 
 for func in ${func_list[@]}
+do
     for method in ${method_list[@]}
+    do
         python train.py -f $func -m $method
+    done
+done
