@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=benchmark_train
-#SBATCH --output=benchmark_train.out
+#SBATCH --output=benchmark_train.log
 #SBATCH --error=benchmark_train.err
 #SBATCH --mem=16G
 #SBATCH --ntasks=4
