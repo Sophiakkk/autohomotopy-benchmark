@@ -13,10 +13,9 @@ method_list = ("autohomotopy", "pinns")
 
 for func in ${func_list[@]}
 do
-echo $func
+    echo $func
     for method in ${method_list[@]}
-    echo $method
     do
-        python train.py -f $func -m $method
+        echo $method
     done
 done
