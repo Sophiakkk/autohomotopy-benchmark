@@ -89,7 +89,8 @@ class AutoHomotopyTrainer(object):
                 self.optimizer.step()
                 # if epoch % 1000 == 0:
                 print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}")
-        torch.save(self.net.state_dict(), "./models/{}_{}.pth".format(self.method, self.init_func_name))
+            if t % 10 == 0:
+                torch.save(self.net.state_dict(), "./models/{}_{}_T{}_t{}.pth".format(self.method, self.init_func_name, self.tmax,t))
 
 class PINNsTrainer(object):
     def __init__(self,
@@ -183,7 +184,7 @@ class PINNsTrainer(object):
             # if epoch % 1000 == 0:
             print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}, Initial Condition Loss: {initial_condition_loss.item()}")
         
-        torch.save(self.net.state_dict(), "./models/{}_{}.pth".format(self.method, self.init_func_name))
+        torch.save(self.net.state_dict(), "./models/{}_{}_T{}.pth".format(self.method, self.init_func_name, self.tmax))
 
 class GDEvaluator(object):
     def __init__(self,
