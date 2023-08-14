@@ -15,6 +15,7 @@ args = parser.parse_args()
 method_name = args.method_name
 func_name = args.func_name
 x_range = np.array(domain_range[func_name])
+T = args.max_timestep
 
 # Training loop
 start = timeit.default_timer()
@@ -23,7 +24,8 @@ if method_name == 'autohomotopy':
     algorithm = AutoHomotopyTrainer(net=NeuralNet(), 
                                     x_range = x_range, 
                                     init_func_name=func_name, 
-                                    method = method_name)
+                                    method = method_name,
+                                    tmax=T)
     algorithm.preprocess()
     algorithm.train()
 
@@ -31,7 +33,8 @@ elif method_name == 'pinns':
     algorithm = PINNsTrainer(net=NeuralNet(),
                             x_range = x_range,
                             init_func_name=func_name,
-                            method = method_name)
+                            method = method_name,
+                            tmax=T)
     algorithm.preprocess()
     algorithm.load_data()
     algorithm.train()
