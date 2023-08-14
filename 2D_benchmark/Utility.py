@@ -75,7 +75,7 @@ class AutoHomotopyTrainer(object):
                 if t == 0:
                     loss = torch.mean(torch.square(u-self.u0))
                 else:
-                    latent_prime = np.random.normal(loc=self.features.clone().detach().numpy()[None,:],scale=cov_t,size=(self.num_samples,self.features.shape[0],self.features.shape[1]))
+                    latent_prime = np.random.normal(loc=self.features.cpu().detach().numpy()[None,:],scale=cov_t,size=(self.num_samples,self.features.shape[0],self.features.shape[1]))
                     latent_prime = latent_prime.reshape(-1,self.features.shape[1])
                     t_prime = np.repeat(t-1, latent_prime.shape[0]).reshape(-1,1) # last time step
                     input_prime = np.hstack([latent_prime,t_prime])
