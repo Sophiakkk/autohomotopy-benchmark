@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#SBATCH --job-name=benchmark_train_autohomotopy
-#SBATCH --output=benchmark_train_autohomotopy.log
-#SBATCH --error=benchmark_train_autohomotopy.err
+#SBATCH --job-name=benchmark_single_train_autohomotopy
+#SBATCH --output=benchmark_single_train_autohomotopy.log
+#SBATCH --error=benchmark_single_train_autohomotopy.err
 #SBATCH --mem=8GB
 #SBATCH --ntasks=4
 #SBATCH --cpus-per-task=4
