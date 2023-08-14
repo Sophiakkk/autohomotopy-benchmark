@@ -81,9 +81,10 @@ class AutoHomotopyTrainer(object):
                     t_prime = np.repeat(t-1, latent_prime.shape[0]).reshape(-1,1) # last time step
                     input_prime = torch.tensor(np.hstack([latent_prime,t_prime]),requires_grad=False,dtype=torch.float32).to(self.device)
                     # print(input_prime.shape) # (100000,3)
-                    fx_prime = self.net(input_prime).reshape((self.num_samples,self.features.shape[0]))
+                    fx_prime = torch.mean(self.net(input_prime).reshape((self.num_samples,self.features.shape[0])),dim=0)
                     # print(fx_prime.shape)
-                    loss = torch.mean(torch.square(u-fx_prime),dim=0)
+                    # print(u.squeeze().shape)
+                    loss = torch.mean(torch.square(u.squeeze()-fx_prime))
                 loss.backward()
                 self.optimizer.step()
                 # if epoch % 1000 == 0:
