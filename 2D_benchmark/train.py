@@ -33,6 +33,7 @@ elif method_name == 'pinns':
                             init_func_name=func_name,
                             method = method_name)
     algorithm.preprocess()
+    algorithm.load_data()
     algorithm.train()
 
 stop = timeit.default_timer()
