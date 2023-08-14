@@ -16,5 +16,6 @@ for func in ${func_list[@]}; do
     for method in ${method_list[@]}; do
         echo $method
         python train.py --func $func --method $method &
+        sleep 5
     done
 done
