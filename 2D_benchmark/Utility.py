@@ -3,7 +3,7 @@ import torch.nn as nn
 import numpy as np
 from two_dim_funcs import *
 import numdifftools as nd
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, TensorDataset
 
 
 # your algorithm is class(object):
@@ -123,10 +123,10 @@ class PINNsTrainer(object):
         x1_init, x2_init = np.meshgrid(x1, x2)
         t_vec = np.linspace(0, self.tmax, self.tmax+1)
         X1, X2, T = np.meshgrid(x1, x2, t_vec)
-        init_func = pick_function(self.init_func_name) # pick the initial function w.r.t. the function name
-        self.features = torch.tensor(np.c_[X1.ravel(), X2.ravel()], requires_grad=True, dtype=torch.float32).to(self.device)
-        self.t = torch.tensor(T.ravel().reshape(-1,1), requires_grad=True, dtype=torch.float32).to(self.device)
-        self.u0 = torch.tensor(init_func(X1.ravel().reshape(-1,1),X2.ravel().reshape(-1,1)), requires_grad=False, dtype=torch.float32).to(self.device) # generate the initial function values
+        self.init_func = pick_function(self.init_func_name) # pick the initial function w.r.t. the function name
+        self.features = torch.tensor(np.c_[X1.ravel(), X2.ravel()],dtype=torch.float32)
+        self.t = torch.tensor(T.ravel().reshape(-1,1), dtype=torch.float32)
+        self.u0 = torch.tensor(self.init_func(X1.ravel().reshape(-1,1),X2.ravel().reshape(-1,1)), requires_grad=False, dtype=torch.float32) # generate the initial function values
 
     # Define the PDE function for each input feature
     def pde_loss(self, t, feature, u):
@@ -149,22 +149,36 @@ class PINNsTrainer(object):
 
         return pde_loss
     
-    def loader(self):
-        loader = DataLoader(self.features, batch_size=256, shuffle=True)
+    def load_data(self):
+        dataset = TensorDataset(torch.cat((self.features, self.t), dim=1), self.u0)
+        self.loader = DataLoader(dataset, batch_size=256, shuffle=True, pin_memory=True)
 
-    
     # Training the PINNs model
     def train(self):
         for epoch in range(self.num_epochs):
-            self.optimizer.zero_grad()
-            F_pred = self.net(torch.cat((self.features, self.t), dim=1))
-            loss = self.pde_loss(self.t, self.features, F_pred) # pde(t, x, u)
+            for batch_idx, (inputs, u0) in enumerate(self.loader):
+                features = inputs[:,:2].to(self.device).requires_grad_(True)
+                t = inputs[:,2].reshape(-1,1).to(self.device).requires_grad_(True)
+                u0 = u0.to(self.device)
 
-            # Incorporate the boundary condition at t=0
-            initial_condition_loss = torch.mean(torch.square(F_pred.reshape((self.num_grids*self.num_grids, self.tmax+1))[:,0] - self.u0))
-            loss += initial_condition_loss
-            loss.backward()
-            self.optimizer.step()
+                self.optimizer.zero_grad()
+                F_pred = self.net(torch.cat((features, t), dim=1))
+                loss = self.pde_loss(t, features, F_pred) # pde(t, x, u)
+
+                f0 = self.net(torch.cat((features, torch.zeros(inputs.shape[0]).reshape(-1,1)), dim=1))
+                initial_condition_loss = torch.mean(torch.square(f0 - u0))
+                loss += initial_condition_loss
+                loss.backward()
+                self.optimizer.step()
+
+                # self.optimizer.zero_grad()
+                # F_pred = self.net(torch.cat((self.features, self.t), dim=1))
+                # loss = self.pde_loss(self.t, self.features, F_pred) # pde(t, x, u)
+                # # Incorporate the boundary condition at t=0
+                # initial_condition_loss = torch.mean(torch.square(F_pred.reshape((self.num_grids*self.num_grids, self.tmax+1))[:,0] - self.u0))
+                # loss += initial_condition_loss
+                # loss.backward()
+                # self.optimizer.step()
 
             # if epoch % 1000 == 0:
             print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}, Initial Condition Loss: {initial_condition_loss.item()}")
