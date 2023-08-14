@@ -3,6 +3,7 @@ import torch.nn as nn
 import numpy as np
 from two_dim_funcs import *
 import numdifftools as nd
+from torch.utils.data import DataLoader
 
 
 # your algorithm is class(object):
@@ -78,9 +79,9 @@ class AutoHomotopyTrainer(object):
                     latent_prime = np.random.normal(loc=self.features.cpu().detach().numpy()[None,:],scale=cov_t,size=(self.num_samples,self.features.shape[0],self.features.shape[1]))
                     latent_prime = latent_prime.reshape(-1,self.features.shape[1])
                     t_prime = np.repeat(t-1, latent_prime.shape[0]).reshape(-1,1) # last time step
-                    input_prime = np.hstack([latent_prime,t_prime])
+                    input_prime = torch.tensor(np.hstack([latent_prime,t_prime])).to(self.device)
                     # print(input_prime.shape) # (100000,3)
-                    fx_prime = self.net(input_prime).reshape(self.num_samples,self.features.shape[0])
+                    fx_prime = self.net(input_prime).reshape((self.num_samples,self.features.shape[0]))
                     # print(fx_prime.shape)
                     loss = torch.mean(torch.square(u-fx_prime),dim=0)
                 loss.backward()
@@ -146,6 +147,10 @@ class PINNsTrainer(object):
         pde_loss = (du_dt - pde_rhs).norm().detach()
 
         return pde_loss
+    
+    def loader(self):
+        loader = DataLoader(self.features, batch_size=256, shuffle=True)
+
     
     # Training the PINNs model
     def train(self):
