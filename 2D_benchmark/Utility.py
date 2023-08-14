@@ -79,7 +79,7 @@ class AutoHomotopyTrainer(object):
                     latent_prime = np.random.normal(loc=self.features.cpu().detach().numpy()[None,:],scale=cov_t,size=(self.num_samples,self.features.shape[0],self.features.shape[1]))
                     latent_prime = latent_prime.reshape(-1,self.features.shape[1])
                     t_prime = np.repeat(t-1, latent_prime.shape[0]).reshape(-1,1) # last time step
-                    input_prime = torch.tensor(np.hstack([latent_prime,t_prime])).to(self.device)
+                    input_prime = torch.tensor(np.hstack([latent_prime,t_prime]),requires_grad=False,dtype=torch.float32).to(self.device)
                     # print(input_prime.shape) # (100000,3)
                     fx_prime = self.net(input_prime).reshape((self.num_samples,self.features.shape[0]))
                     # print(fx_prime.shape)
