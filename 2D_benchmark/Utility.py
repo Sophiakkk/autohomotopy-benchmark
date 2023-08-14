@@ -165,7 +165,7 @@ class PINNsTrainer(object):
                 F_pred = self.net(torch.cat((features, t), dim=1))
                 loss = self.pde_loss(t, features, F_pred) # pde(t, x, u)
 
-                f0 = self.net(torch.cat((features, torch.zeros(inputs.shape[0]).reshape(-1,1)), dim=1))
+                f0 = self.net(torch.cat((features, torch.zeros(inputs.shape[0]).reshape(-1,1).to(self.device)), dim=1))
                 initial_condition_loss = torch.mean(torch.square(f0 - u0))
                 loss += initial_condition_loss
                 loss.backward()
