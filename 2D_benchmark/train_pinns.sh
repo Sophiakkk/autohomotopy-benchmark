@@ -3,7 +3,7 @@
 #SBATCH --job-name=benchmark_train_pinns
 #SBATCH --output=benchmark_train_pinns.log
 #SBATCH --error=benchmark_train_pinns.err
-#SBATCH --mem=16G
+#SBATCH --mem=8GB
 #SBATCH --ntasks=4
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:2
