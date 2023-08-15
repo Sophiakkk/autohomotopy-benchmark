@@ -189,7 +189,6 @@ class PINNsTrainer(object):
 class GDEvaluator(object):
     def __init__(self,
                  x_range: np.ndarray,
-                 tmax: int,
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
@@ -197,10 +196,10 @@ class GDEvaluator(object):
                  step_size: float = 0.001,
                  ):
         self.seed = seed
+        self.init_func_name = init_func_name
         self.init_func = pick_function(init_func_name)
         self.xmin = x_range[:,0]
         self.xmax = x_range[:,1]
-        self.tmax = tmax
         self.total_iterations = total_iterations
         self.step_size = step_size
         self.x_opt = x_opt
@@ -208,16 +207,17 @@ class GDEvaluator(object):
     def initalizer(self):
         # Set the random seed
         np.random.seed(self.seed)
-        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(2,))
 
     def evaluate(self):
         x = self.initial_x
         # perform gradient descent
         for i in range(self.total_iterations):
-            grad_x = nd.Gradient(self.init_func)(x)
+            grad_x = nd.Gradient(self.init_func)(x[0],x[1])
             x = x - self.step_size*grad_x
         error = np.linalg.norm(x-self.x_opt)
-        return error
+        with open("./results/GD_{}.txt".format(self.init_func_name), "a") as f:
+            f.write("seed{}: {}\n".format(self.seed, error))
         
 class SLGH_r_Evaluator(object):
     def __init__(self,
