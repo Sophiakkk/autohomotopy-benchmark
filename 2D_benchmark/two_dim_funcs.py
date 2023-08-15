@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # function list
-function_list = ['ackley', 'holder_table', 'cross_in_tray', 'bukin', 'drop_wave', 
-                 'eggholder', 'griewank', 'langermann', 'levy', 'levy_13',
+function_list = ['ackley', 'holdertable', 'tray', 'bukin', 'dropwave', 
+                 'eggholder', 'griewank', 'langermann', 'levy', 'levy13',
                  'rastrigin', 'schaffer2', 'schaffer4', 'schwefel', 'shubert']
 
 # ackley function
