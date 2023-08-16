@@ -18,6 +18,7 @@ args = parser.parse_args()
 seed = args.seed
 seed_list = [1,2,3,4,5,6,7,8,9,10]
 func_list = ["ackley","bukin","dropwave","eggholder","griewank","langermann","levy","levy13","rastrigin","schaffer2","schwefel","shubert"]
+method_list = ["GD","SLGD_r","SLGD_d"]
 # multiple_func_list = ["tray", "holdertable", "schaffer4", "shubert"]
 method_name = args.method_name
 func_name = args.func_name
@@ -26,38 +27,40 @@ x_opt = np.array(opt_solutions[func_name][0]) # single opt solution
 total_iterations = args.num_iter
 step_size = args.step_size
 
-if method_name == 'GD':
-    for func_name in func_list:
-        for seed in seed_list:
-            algorithm_evaluator = GDEvaluator(init_func_name = func_name, 
-                                            seed=seed,
-                                            x_range=x_range, 
-                                            x_opt = x_opt)
-            algorithm_evaluator.initalizer()
-            algorithm_evaluator.evaluate()
+for method_name in method_list:
+    if method_name == 'GD':
+        for func_name in func_list:
+            for seed in seed_list:
+                algorithm_evaluator = GDEvaluator(init_func_name = func_name, 
+                                                seed=seed,
+                                                x_range=x_range, 
+                                                x_opt = x_opt,
+                                                method_name = method_name)
+                algorithm_evaluator.initalizer()
+                algorithm_evaluator.evaluate()
 
-elif method_name == 'SLGD_r':
-    for func_name in func_list:
-        for seed in seed_list:
-            algorithm_evaluator = SLGH_r_Evaluator(init_func_name = func_name, 
-                                            seed=seed,
-                                            x_range=x_range, 
-                                            x_opt = x_opt,
-                                            method_name = method_name,
-                                            num_samples=50,
-                                            tmax=50,)
-            algorithm_evaluator.initalizer()
-            algorithm_evaluator.evaluate()
+    elif method_name == 'SLGD_r':
+        for func_name in func_list:
+            for seed in seed_list:
+                algorithm_evaluator = SLGH_r_Evaluator(init_func_name = func_name, 
+                                                seed=seed,
+                                                x_range=x_range, 
+                                                x_opt = x_opt,
+                                                method_name = method_name,
+                                                num_samples=50,
+                                                tmax=50,)
+                algorithm_evaluator.initalizer()
+                algorithm_evaluator.evaluate()
 
-elif method_name == 'SLGD_d':
-    for func_name in func_list:
-        for seed in seed_list:
-            algorithm_evaluator = SLGH_d_Evaluator(init_func_name = func_name, 
-                                            seed=seed,
-                                            x_range=x_range, 
-                                            x_opt = x_opt,
-                                            method_name = method_name,
-                                            num_samples=50,
-                                            tmax=50,)
-            algorithm_evaluator.initalizer()
-            algorithm_evaluator.evaluate()
+    elif method_name == 'SLGD_d':
+        for func_name in func_list:
+            for seed in seed_list:
+                algorithm_evaluator = SLGH_d_Evaluator(init_func_name = func_name, 
+                                                seed=seed,
+                                                x_range=x_range, 
+                                                x_opt = x_opt,
+                                                method_name = method_name,
+                                                num_samples=50,
+                                                tmax=50,)
+                algorithm_evaluator.initalizer()
+                algorithm_evaluator.evaluate()
