@@ -226,12 +226,14 @@ class SLGH_r_Evaluator(object):
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
+                 method_name: str,
                  num_samples, int = 50,
                  total_iterations: int = 10000,
                  step_size: float = 0.001,
                  discount_factor: float = 0.999,
                  ):
         self.seed = seed
+        self.init_func_name = init_func_name
         self.init_func = pick_function(init_func_name)
         self.xmin = x_range[:,0]
         self.xmax = x_range[:,1]
@@ -241,35 +243,42 @@ class SLGH_r_Evaluator(object):
         self.step_size = step_size
         self.x_opt = x_opt
         self.discount_factor = discount_factor
+        self.method_name = method_name
     
     def initalizer(self):
         # Set the random seed
         np.random.seed(self.seed)
-        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(2,))
 
     def grad_estimate(self, t, x):
         d = x.shape[0]
-        grad_x= 0
+        grad_x = 0
         grad_t = 0
-        f_init = self.init_func(x)
+        f_init = self.init_func(x[0],x[1])
         for i in range(self.num_samples):
             if t**2>0:
                 v = np.random.normal(0,1,d)
-                f_tmp = self.init_func(x+t*v)
+                x_tmp = x+t*v
+                f_tmp = self.init_func(x_tmp[0],x_tmp[1])
                 # gradient estimate
                 grad_x += 1/self.num_samples*v*(f_tmp-f_init)/t
                 # gradient of t
-                grad_t += 1/self.num_samples*(v**2-1)*(f_tmp-f_init)/t**2
+                grad_t += 1/self.num_samples*(np.inner(v,v)-d)*(f_tmp-f_init)/t**2
             else:
-                grad_x = nd.Gradient(self.init_func)(x)
+                grad_x = nd.Gradient(self.init_func)(x[0],x[1])
         return grad_x, grad_t
     
     def evaluate(self):
+        x = self.initial_x
+        t = self.tmax            
         for i in range(self.total_iterations):
             grad_x, grad_t = self.grad_estimate(t,x)
             x = x - self.step_size*grad_x
             if t>0:
                 t = self.discount_factor*t
+        error = np.linalg.norm(x-self.x_opt)
+        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+            f.write("seed{}: {}\n".format(self.seed, error))
 
 class SLGH_d_Evaluator(object):
     def __init__(self,
@@ -278,50 +287,61 @@ class SLGH_d_Evaluator(object):
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
+                 method_name: str,
+                 num_samples: int = 50,
                  discount_factor: float = 0.999,
                  total_iterations: int = 10000,
                  step_size: float = 0.001,
                  threshold: float = 1e-3,
                  ):
         self.seed = seed
+        self.init_func_name = init_func_name
         self.init_func = pick_function(init_func_name)
         self.xmin = x_range[:,0]
         self.xmax = x_range[:,1]
         self.tmax = tmax
         self.total_iterations = total_iterations
+        self.num_samples = num_samples
         self.step_size = step_size
         self.x_opt = x_opt
         self.discount_factor = discount_factor
         self.threshold = threshold
+        self.method_name = method_name
     
     def initalizer(self):
         # Set the random seed
         np.random.seed(self.seed)
-        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+        self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(2,))
 
     def grad_estimate(self, t, x):
         d = x.shape[0]
-        grad_x= 0
+        grad_x = 0
         grad_t = 0
-        f_init = self.init_func(x)
+        f_init = self.init_func(x[0],x[1])
         for i in range(self.num_samples):
             if t**2>0:
                 v = np.random.normal(0,1,d)
-                f_tmp = self.init_func(x+t*v)
+                x_tmp = x+t*v
+                f_tmp = self.init_func(x_tmp[0],x_tmp[1])
                 # gradient estimate
                 grad_x += 1/self.num_samples*v*(f_tmp-f_init)/t
                 # gradient of t
-                grad_t += 1/self.num_samples*(v**2-1)*(f_tmp-f_init)/t**2
+                grad_t += 1/self.num_samples*(np.inner(v,v)-d)*(f_tmp-f_init)/t**2
             else:
-                grad_x = nd.Gradient(self.init_func)(x)
+                grad_x = nd.Gradient(self.init_func)(x[0],x[1])
         return grad_x, grad_t
-    
+
     def evaluate(self):
+        x = self.initial_x
+        t = self.tmax            
         for i in range(self.total_iterations):
             grad_x, grad_t = self.grad_estimate(t,x)
             x = x - self.step_size*grad_x
             if t>0:
                 t = np.maximum(np.minimum(t*self.discount_factor,t-self.threshold*grad_t), 1e-10)
+        error = np.linalg.norm(x-self.x_opt)
+        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+            f.write("seed{}: {}\n".format(self.seed, error))
 
 class PINNs_Evaluator(object):
     def __init__(self,
