@@ -1,0 +1,216 @@
+Senario: GD on function ackley
+avg error (input): 29.02
+std error (input): 7.708
+avg error (output): 20.26
+std error (output): 1.068
+-----------------------------------------
+Senario: GD on function bukin
+avg error (input): 45.04
+std error (input): 37.59
+avg error (output): 302.1
+std error (output): 269.3
+-----------------------------------------
+Senario: GD on function dropwave
+avg error (input): 29.08
+std error (input): 7.743
+avg error (output): 0.9958
+std error (output): 0.005367
+-----------------------------------------
+Senario: GD on function eggholder
+avg error (input): 40.13
+std error (input): 34.08
+avg error (output): 32.22
+std error (output): 21.57
+-----------------------------------------
+Senario: GD on function griewank
+avg error (input): 28.61
+std error (input): 7.359
+avg error (output): 0.9621
+std error (output): 0.4377
+-----------------------------------------
+Senario: GD on function langermann
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.1852
+std error (output): 6.305e-07
+-----------------------------------------
+Senario: GD on function levy
+avg error (input): 29.28
+std error (input): 7.993
+avg error (output): 479.4
+std error (output): 390.9
+-----------------------------------------
+Senario: GD on function levy13
+avg error (input): 28.54
+std error (input): 11.85
+avg error (output): 1221
+std error (output): 1026
+-----------------------------------------
+Senario: GD on function rastrigin
+avg error (input): 28.74
+std error (input): 7.618
+avg error (output): 896.7
+std error (output): 387.2
+-----------------------------------------
+Senario: GD on function schaffer2
+avg error (input): 29.06
+std error (input): 7.772
+avg error (output): 0.4639
+std error (output): 0.1789
+-----------------------------------------
+Senario: GD on function schwefel
+avg error (input): 30.45
+std error (input): 13.98
+avg error (output): 15.99
+std error (output): 9.206
+-----------------------------------------
+Senario: GD on function shubert
+avg error (input): 29.2
+std error (input): 7.911
+avg error (output): 31.07
+std error (output): 22.15
+-----------------------------------------
+Senario: SLGD_r on function ackley
+avg error (input): 28.53
+std error (input): 8.311
+avg error (output): 19.19
+std error (output): 1.176
+-----------------------------------------
+Senario: SLGD_r on function bukin
+avg error (input): 17.82
+std error (input): 10.36
+avg error (output): 42.16
+std error (output): 23.93
+-----------------------------------------
+Senario: SLGD_r on function dropwave
+avg error (input): 29.06
+std error (input): 7.792
+avg error (output): 0.9942
+std error (output): 0.006369
+-----------------------------------------
+Senario: SLGD_r on function eggholder
+avg error (input): 36.71
+std error (input): 12.61
+avg error (output): 52.59
+std error (output): 31.13
+-----------------------------------------
+Senario: SLGD_r on function griewank
+avg error (input): 28.17
+std error (input): 7.759
+avg error (output): 0.2224
+std error (output): 0.09559
+-----------------------------------------
+Senario: SLGD_r on function langermann
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.1852
+std error (output): 6.302e-07
+-----------------------------------------
+Senario: SLGD_r on function levy
+avg error (input): 19.85
+std error (input): 10.68
+avg error (output): 32.52
+std error (output): 24.08
+-----------------------------------------
+Senario: SLGD_r on function levy13
+avg error (input): 1.414
+std error (input): 0.0006221
+avg error (output): 2
+std error (output): 1.725e-06
+-----------------------------------------
+Senario: SLGD_r on function rastrigin
+avg error (input): 0.0005263
+std error (input): 0.0002346
+avg error (output): 3.862
+std error (output): 2.084
+-----------------------------------------
+Senario: SLGD_r on function schaffer2
+avg error (input): 29.1
+std error (input): 7.771
+avg error (output): 0.3395
+std error (output): 0.09009
+-----------------------------------------
+Senario: SLGD_r on function schwefel
+avg error (input): 31.56
+std error (input): 14.97
+avg error (output): 23.26
+std error (output): 13.91
+-----------------------------------------
+Senario: SLGD_r on function shubert
+avg error (input): 29.15
+std error (input): 7.859
+avg error (output): 51.08
+std error (output): 15.76
+-----------------------------------------
+Senario: SLGD_d on function ackley
+avg error (input): 28.53
+std error (input): 8.311
+avg error (output): 19.19
+std error (output): 1.176
+-----------------------------------------
+Senario: SLGD_d on function bukin
+avg error (input): 17.67
+std error (input): 10.21
+avg error (output): 49.54
+std error (output): 16.52
+-----------------------------------------
+Senario: SLGD_d on function dropwave
+avg error (input): 29.06
+std error (input): 7.793
+avg error (output): 0.9941
+std error (output): 0.006369
+-----------------------------------------
+Senario: SLGD_d on function eggholder
+avg error (input): 36.72
+std error (input): 12.61
+avg error (output): 52.57
+std error (output): 31.18
+-----------------------------------------
+Senario: SLGD_d on function griewank
+avg error (input): 28.17
+std error (input): 7.76
+avg error (output): 0.2222
+std error (output): 0.09559
+-----------------------------------------
+Senario: SLGD_d on function langermann
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.1852
+std error (output): 6.302e-07
+-----------------------------------------
+Senario: SLGD_d on function levy
+avg error (input): 19.86
+std error (input): 10.67
+avg error (output): 32.52
+std error (output): 24.08
+-----------------------------------------
+Senario: SLGD_d on function levy13
+avg error (input): 1.414
+std error (input): 1.303e-08
+avg error (output): 2
+std error (output): 3.781e-16
+-----------------------------------------
+Senario: SLGD_d on function rastrigin
+avg error (input): 3.82
+std error (input): 1.549
+avg error (output): 1.421
+std error (output): 1.066
+-----------------------------------------
+Senario: SLGD_d on function schaffer2
+avg error (input): 29.05
+std error (input): 7.762
+avg error (output): 0.3366
+std error (output): 0.08976
+-----------------------------------------
+Senario: SLGD_d on function schwefel
+avg error (input): 31.56
+std error (input): 14.97
+avg error (output): 23.27
+std error (output): 13.91
+-----------------------------------------
+Senario: SLGD_d on function shubert
+avg error (input): 28.91
+std error (input): 7.624
+avg error (output): 53.48
+std error (output): 16.95
+-----------------------------------------
