@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:2
-#SBATCH --array=1-24
+#SBATCH --array=1-6
 
 config=multiple_config.txt
 
