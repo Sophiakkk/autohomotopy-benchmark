@@ -11,8 +11,8 @@
 
 config=single_config.txt
 
-method=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '1==ArrayTaskID {print $2}' $config)
+method=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)
 
-func=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '1==ArrayTaskID {print $3}' $config)
+func=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $3}' $config)
 
 echo "This is array task ${SLURM_ARRAY_TASK_ID}, the method name is ${method} and the function is ${func}." >> output.txt
