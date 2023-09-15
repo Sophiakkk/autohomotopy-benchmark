@@ -1,4 +1,0 @@
-Method: autohomotopy
-Function: eggholder
-Max Timestep: 50
-Running Time: 93041.620276317

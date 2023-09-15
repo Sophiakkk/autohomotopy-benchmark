@@ -1,4 +1,0 @@
-Method: pinns
-Function: langermann
-Max Timestep: 50
-Running Time: 133682.26892040297

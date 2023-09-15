@@ -1,4 +1,0 @@
-Method: autohomotopy
-Function: schwefel
-Max Timestep: 50
-Running Time: 94783.82487714011

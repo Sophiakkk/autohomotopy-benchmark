@@ -1,4 +1,0 @@
-Method: pinns
-Function: levy
-Max Timestep: 50
-Running Time: 128310.881365604

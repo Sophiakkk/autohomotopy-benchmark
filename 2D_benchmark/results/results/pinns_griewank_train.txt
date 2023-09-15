@@ -1,4 +1,0 @@
-Method: pinns
-Function: griewank
-Max Timestep: 50
-Running Time: 125562.53870339703

@@ -1,4 +1,0 @@
-Method: autohomotopy
-Function: bukin
-Max Timestep: 50
-Running Time: 95578.81478552899

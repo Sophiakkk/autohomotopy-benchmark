@@ -1,4 +1,0 @@
-Method: pinns
-Function: bukin
-Max Timestep: 50
-Running Time: 131175.04719106902

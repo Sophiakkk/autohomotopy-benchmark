@@ -1,4 +1,0 @@
-Method: pinns
-Function: shubert
-Max Timestep: 50
-Running Time: 130241.45490717585

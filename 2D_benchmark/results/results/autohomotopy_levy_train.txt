@@ -1,4 +1,0 @@
-Method: autohomotopy
-Function: levy
-Max Timestep: 50
-Running Time: 80890.55158007098

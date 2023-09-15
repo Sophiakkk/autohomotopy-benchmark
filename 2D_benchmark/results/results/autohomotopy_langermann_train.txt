@@ -1,4 +1,0 @@
-Method: autohomotopy
-Function: langermann
-Max Timestep: 50
-Running Time: 77691.95566356403
