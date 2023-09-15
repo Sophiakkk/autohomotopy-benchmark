@@ -1,0 +1,4 @@
+Method: pinns
+Function: schwefel
+Max Timestep: 50
+Running Time: 126269.92672074097
