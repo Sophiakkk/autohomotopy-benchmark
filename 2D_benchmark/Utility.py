@@ -192,6 +192,7 @@ class GDEvaluator(object):
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
+                 method_name: str,
                  total_iterations: int = 10000,
                  step_size: float = 0.001,
                  ):
@@ -203,6 +204,7 @@ class GDEvaluator(object):
         self.total_iterations = total_iterations
         self.step_size = step_size
         self.x_opt = x_opt
+        self.method_name = method_name
     
     def initalizer(self):
         # Set the random seed
@@ -215,9 +217,10 @@ class GDEvaluator(object):
         for i in range(self.total_iterations):
             grad_x = nd.Gradient(self.init_func)(x[0],x[1])
             x = x - self.step_size*grad_x
-        error = np.linalg.norm(x-self.x_opt)
-        with open("./results/GD_{}.txt".format(self.init_func_name), "a") as f:
-            f.write("seed{}: {}\n".format(self.seed, error))
+        errorx = np.linalg.norm(x-self.x_opt)
+        errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
+        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+            f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
         
 class SLGH_r_Evaluator(object):
     def __init__(self,
@@ -276,9 +279,10 @@ class SLGH_r_Evaluator(object):
             x = x - self.step_size*grad_x
             if t>0:
                 t = self.discount_factor*t
-        error = np.linalg.norm(x-self.x_opt)
+        errorx = np.linalg.norm(x-self.x_opt)
+        errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
         with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
-            f.write("seed{}: {}\n".format(self.seed, error))
+            f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
 
 class SLGH_d_Evaluator(object):
     def __init__(self,
@@ -339,9 +343,10 @@ class SLGH_d_Evaluator(object):
             x = x - self.step_size*grad_x
             if t>0:
                 t = np.maximum(np.minimum(t*self.discount_factor,t-self.threshold*grad_t), 1e-10)
-        error = np.linalg.norm(x-self.x_opt)
+        errorx = np.linalg.norm(x-self.x_opt)
+        errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
         with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
-            f.write("seed{}: {}\n".format(self.seed, error))
+            f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
 
 class PINNs_Evaluator(object):
     def __init__(self,

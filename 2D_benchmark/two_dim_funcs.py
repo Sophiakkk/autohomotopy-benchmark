@@ -52,7 +52,6 @@ def langermann(x,y):
     m = 5
     result = 0
     input = np.hstack((x,y)).reshape(-1,2)
-    print(input.shape)
     for i in range(m):
         result += -c[i]*np.exp(-1/np.pi*np.sum((input - A[i,:])**2, axis = 1))*np.cos(np.pi*np.sum((input - A[i,:])**2, axis = 1))
     return result
