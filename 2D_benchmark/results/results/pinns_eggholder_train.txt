@@ -1,0 +1,4 @@
+Method: pinns
+Function: eggholder
+Max Timestep: 50
+Running Time: 129794.13440312998
