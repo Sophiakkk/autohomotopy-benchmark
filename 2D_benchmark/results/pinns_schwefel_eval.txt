@@ -1,0 +1,11 @@
+Evaluation results for pinns with schwefel:
+seed 1: error (input) is 64.37635445514074, error (output) is 33.896728515625
+seed 2: error (input) is 22.484202464864538, error (output) is 12.59283447265625
+seed 3: error (input) is 67.35091655811291, error (output) is 37.78033447265625
+seed 4: error (input) is 76.01454046136492, error (output) is 40.38507080078125
+seed 5: error (input) is 59.88463960265988, error (output) is 63.08966064453125
+seed 6: error (input) is 80.3180749705905, error (output) is 23.85009765625
+seed 7: error (input) is 59.3496277621453, error (output) is 62.3533935546875
+seed 8: error (input) is 78.69929713092839, error (output) is 102.76275634765625
+seed 9: error (input) is 55.981842446256785, error (output) is 62.120361328125
+seed 10: error (input) is 75.59569115520448, error (output) is 35.56524658203125

@@ -1,0 +1,144 @@
+Senario: autohomotopy on function ackley
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 20.98
+std error (output): 0.8428
+-----------------------------------------
+Senario: autohomotopy on function bukin
+avg error (input): 29.08
+std error (input): 7.766
+avg error (output): 416.6
+std error (output): 102.9
+-----------------------------------------
+Senario: autohomotopy on function dropwave
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.9969
+std error (output): 0.003893
+-----------------------------------------
+Senario: autohomotopy on function eggholder
+avg error (input): 29.07
+std error (input): 7.756
+avg error (output): 28.98
+std error (output): 19.66
+-----------------------------------------
+Senario: autohomotopy on function griewank
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 1.296
+std error (output): 0.648
+-----------------------------------------
+Senario: autohomotopy on function langermann
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.1852
+std error (output): 6.302e-07
+-----------------------------------------
+Senario: autohomotopy on function levy
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 575.1
+std error (output): 481.9
+-----------------------------------------
+Senario: autohomotopy on function levy13
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 1285
+std error (output): 650.4
+-----------------------------------------
+Senario: autohomotopy on function rastrigin
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 926.8
+std error (output): 396.1
+-----------------------------------------
+Senario: autohomotopy on function schaffer2
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 0.5076
+std error (output): 0.1207
+-----------------------------------------
+Senario: autohomotopy on function schwefel
+avg error (input): 29.07
+std error (input): 7.765
+avg error (output): 15.46
+std error (output): 11.48
+-----------------------------------------
+Senario: autohomotopy on function shubert
+avg error (input): 29.06
+std error (input): 7.766
+avg error (output): 33.67
+std error (output): 33.08
+-----------------------------------------
+Senario: pinns on function ackley
+avg error (input): 27.4
+std error (input): 7.507
+avg error (output): 21.06
+std error (output): 0.9787
+-----------------------------------------
+Senario: pinns on function bukin
+avg error (input): 28.28
+std error (input): 7.235
+avg error (output): 409.5
+std error (output): 101.4
+-----------------------------------------
+Senario: pinns on function dropwave
+avg error (input): 28.98
+std error (input): 7.941
+avg error (output): 0.9967
+std error (output): 0.003922
+-----------------------------------------
+Senario: pinns on function eggholder
+avg error (input): 144.8
+std error (input): 42.78
+avg error (output): 73
+std error (output): 27.23
+-----------------------------------------
+Senario: pinns on function griewank
+avg error (input): 28.96
+std error (input): 8.329
+avg error (output): 1.385
+std error (output): 0.6958
+-----------------------------------------
+Senario: pinns on function langermann
+avg error (input): 29.08
+std error (input): 7.754
+avg error (output): 0.1852
+std error (output): 5.549e-07
+-----------------------------------------
+Senario: pinns on function levy
+avg error (input): 34.34
+std error (input): 16.76
+avg error (output): 551.7
+std error (output): 440.3
+-----------------------------------------
+Senario: pinns on function levy13
+avg error (input): 29.52
+std error (input): 13.67
+avg error (output): 1738
+std error (output): 2146
+-----------------------------------------
+Senario: pinns on function rastrigin
+avg error (input): 28.89
+std error (input): 7.871
+avg error (output): 916.6
+std error (output): 413
+-----------------------------------------
+Senario: pinns on function schaffer2
+avg error (input): 30.26
+std error (input): 7.632
+avg error (output): 0.471
+std error (output): 0.1518
+-----------------------------------------
+Senario: pinns on function schwefel
+avg error (input): 64.01
+std error (input): 16.12
+avg error (output): 47.44
+std error (output): 24.46
+-----------------------------------------
+Senario: pinns on function shubert
+avg error (input): 29.07
+std error (input): 7.759
+avg error (output): 31.97
+std error (output): 33.75
+-----------------------------------------

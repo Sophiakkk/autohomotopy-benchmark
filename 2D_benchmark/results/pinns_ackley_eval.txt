@@ -1,0 +1,11 @@
+Evaluation results for pinns with ackley:
+seed 1: error (input) is 13.778391905385796, error (output) is 19.220447540283203
+seed 2: error (input) is 25.89545570646391, error (output) is 21.59866714477539
+seed 3: error (input) is 14.293871112696214, error (output) is 19.366607666015625
+seed 4: error (input) is 29.05248039311975, error (output) is 21.596601486206055
+seed 5: error (input) is 29.248113056406417, error (output) is 21.506704330444336
+seed 6: error (input) is 27.80970399856411, error (output) is 21.368831634521484
+seed 7: error (input) is 33.56604002390003, error (output) is 22.007938385009766
+seed 8: error (input) is 35.40250379767182, error (output) is 20.539316177368164
+seed 9: error (input) is 27.832707900601946, error (output) is 21.2548885345459
+seed 10: error (input) is 37.16921581624206, error (output) is 22.176109313964844

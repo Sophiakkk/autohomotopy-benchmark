@@ -1,0 +1,11 @@
+Evaluation results for autohomotopy with shubert:
+seed 1: error (input) is 15.430953410933766, error (output) is 10.662739753723145
+seed 2: error (input) is 31.355264648774508, error (output) is 19.29202651977539
+seed 3: error (input) is 14.0305658497596, error (output) is 21.929948806762695
+seed 4: error (input) is 30.728891992915454, error (output) is 30.143142700195312
+seed 5: error (input) is 30.36872337846841, error (output) is 39.058135986328125
+seed 6: error (input) is 28.003612218366708, error (output) is 20.422624588012695
+seed 7: error (input) is 33.27355148592838, error (output) is 21.714778900146484
+seed 8: error (input) is 39.265848976055764, error (output) is 129.05844116210938
+seed 9: error (input) is 32.08848439246918, error (output) is 9.010584831237793
+seed 10: error (input) is 36.092049724149504, error (output) is 35.450191497802734

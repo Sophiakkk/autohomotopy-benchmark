@@ -15,11 +15,12 @@ parser.add_argument("-beta", "--step_size", type = float, default = 0.001)
 args = parser.parse_args()
 
 # Parameters
-seed = args.seed
 seed_list = [1,2,3,4,5,6,7,8,9,10]
 func_list = ["ackley","bukin","dropwave","eggholder","griewank","langermann","levy","levy13","rastrigin","schaffer2","schwefel","shubert"]
-method_list = ["GD","SLGD_r","SLGD_d"]
 # multiple_func_list = ["tray", "holdertable", "schaffer4", "shubert"]
+# method_list = ["GD","SLGD_r","SLGD_d"]
+# method_list = ["autohomotopy","pinns"]
+method_list = ["pinns"]
 method_name = args.method_name
 func_name = args.func_name
 x_range = np.array(domain_range[func_name])
@@ -62,5 +63,39 @@ for method_name in method_list:
                                                 method_name = method_name,
                                                 num_samples=50,
                                                 tmax=50,)
+                algorithm_evaluator.initalizer()
+                algorithm_evaluator.evaluate()
+    
+    elif method_name == 'autohomotopy':
+        for func_name in func_list:
+            with open("./results/{}_{}_eval.txt".format(method_name,func_name), "w") as f:
+                f.write("Evaluation results for {} with {}:\n".format(method_name,func_name))
+            for seed in seed_list:
+                eval_net = NeuralNet()
+                eval_net.load_state_dict(torch.load("./models/{}_{}_T50_t50.pth".format(method_name,func_name),map_location=torch.device('cpu')))
+                algorithm_evaluator = AutoHomotopy_Evaluator(net=eval_net,
+                                                            x_range=x_range, 
+                                                            tmax=50,
+                                                            init_func_name = func_name, 
+                                                            seed=seed,
+                                                            x_opt = x_opt,
+                                                            method_name = method_name,)
+                algorithm_evaluator.initalizer()
+                algorithm_evaluator.evaluate()
+    
+    elif method_name == 'pinns':
+        for func_name in func_list:
+            with open("./results/{}_{}_eval.txt".format(method_name,func_name), "w") as f:
+                f.write("Evaluation results for {} with {}:\n".format(method_name,func_name))
+            for seed in seed_list:
+                eval_net = NeuralNet()
+                eval_net.load_state_dict(torch.load("./models/{}_{}_T50.pth".format(method_name,func_name),map_location=torch.device('cpu')))
+                algorithm_evaluator = PINNs_Evaluator(net=eval_net,
+                                                            x_range=x_range, 
+                                                            tmax=50,
+                                                            init_func_name = func_name, 
+                                                            seed=seed,
+                                                            x_opt = x_opt,
+                                                            method_name = method_name,)
                 algorithm_evaluator.initalizer()
                 algorithm_evaluator.evaluate()

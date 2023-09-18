@@ -1,0 +1,11 @@
+Evaluation results for autohomotopy with griewank:
+seed 1: error (input) is 15.429272153450048, error (output) is 1.5288314819335938
+seed 2: error (input) is 31.350781246245415, error (output) is 0.7509120106697083
+seed 3: error (input) is 14.041528111381309, error (output) is 0.09071046113967896
+seed 4: error (input) is 30.763393772996817, error (output) is 1.6366536617279053
+seed 5: error (input) is 30.36872337846841, error (output) is 1.3101590871810913
+seed 6: error (input) is 28.002351399297396, error (output) is 1.140676736831665
+seed 7: error (input) is 33.279718988450384, error (output) is 2.080132007598877
+seed 8: error (input) is 39.265848976055764, error (output) is 2.1451923847198486
+seed 9: error (input) is 32.08835468532694, error (output) is 0.47790825366973877
+seed 10: error (input) is 36.092049724149504, error (output) is 1.7959213256835938

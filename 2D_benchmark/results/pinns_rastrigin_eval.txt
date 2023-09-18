@@ -1,0 +1,11 @@
+Evaluation results for pinns with rastrigin:
+seed 1: error (input) is 15.583613478798386, error (output) is 277.78643798828125
+seed 2: error (input) is 31.349950672830154, error (output) is 989.9688720703125
+seed 3: error (input) is 13.975983061115786, error (output) is 213.046630859375
+seed 4: error (input) is 30.658426879247063, error (output) is 978.3339233398438
+seed 5: error (input) is 27.744206694487143, error (output) is 771.3731079101562
+seed 6: error (input) is 27.970456789937625, error (output) is 794.8447265625
+seed 7: error (input) is 33.36993293974424, error (output) is 1144.373291015625
+seed 8: error (input) is 40.154221040161936, error (output) is 1640.630615234375
+seed 9: error (input) is 32.065438458033235, error (output) is 1028.6954345703125
+seed 10: error (input) is 36.07545283063103, error (output) is 1327.148193359375

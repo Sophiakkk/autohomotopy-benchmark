@@ -1,0 +1,11 @@
+Evaluation results for pinns with bukin:
+seed 1: error (input) is 17.985083375611193, error (output) is 421.5575256347656
+seed 2: error (input) is 27.304225400936627, error (output) is 519.4633178710938
+seed 3: error (input) is 13.875499533191133, error (output) is 365.40704345703125
+seed 4: error (input) is 32.767594889402694, error (output) is 288.74658203125
+seed 5: error (input) is 30.8632850426952, error (output) is 484.9874267578125
+seed 6: error (input) is 28.000890797497703, error (output) is 428.4247741699219
+seed 7: error (input) is 33.621737451568656, error (output) is 305.44561767578125
+seed 8: error (input) is 39.265848976055764, error (output) is 497.4063415527344
+seed 9: error (input) is 25.679683758926203, error (output) is 235.39886474609375
+seed 10: error (input) is 33.39386268471145, error (output) is 547.962890625
