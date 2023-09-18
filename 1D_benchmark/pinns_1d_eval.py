@@ -5,20 +5,22 @@ import numpy as np
 from one_dim_funcs import gramacy_and_lee, dyhotomy
 import numdifftools as nd
 
-class NeuralNetwork(nn.Module):
+# PINNs model
+class PINNModel(nn.Module):
     def __init__(self):
-        super(NeuralNetwork, self).__init__()
+        super(PINNModel, self).__init__()
         self.fc1 = nn.Linear(2, 32) # 2 input features: x and t
         self.fc2 = nn.Linear(32, 32)
-        self.fc3 = nn.Linear(32, 1) # 1 output feature: u(t,x)
+        self.fc3 = nn.Linear(32, 1) # 1 output feature:
 
-    def forward(self, inputs):
-        x = torch.sigmoid(self.fc1(inputs))
+    def forward(self, x, t):
+        x = torch.cat([x, t], dim=1)
+        x = torch.sigmoid(self.fc1(x))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
         return x
     
-model = torch.load('./models/1D_Autohomotopy.pt')
+model = torch.load('./models/PINNs.pt')
 model.eval()
 
 # t = torch.tensor(50)
@@ -51,38 +53,23 @@ x_max = 3
 for seed in SEED_list:
     np.random.seed(seed=seed)
     x_opt = torch.tensor(np.random.uniform(x_min,x_max), requires_grad=False).expand(1,1)
+    print("x_initial is: ",x_opt)
     
     for i in range(total_iteration):
         x = x_opt.clone().requires_grad_(True)
 
         # Calculate the value of the function and its gradient
-        y = model(torch.cat([t.expand_as(x), x],dim=1))
+        y = model(x, t.expand_as(x))
         grad = torch.autograd.grad(y, x, create_graph=True)[0]
 
         # Perform gradient descent update
         with torch.no_grad():
             x_opt = x - beta * grad
-    print('final error for seed {}'.format(seed),np.linalg.norm(x_opt.item()-x_optimal))
-    final_result.append(np.linalg.norm(x_opt.item()-x_optimal))
-
-final_result = final_result
-print('final result: ', final_result)
-mean = '%.4g'%np.mean(final_result)
-std = '%.4g'%np.std(final_result)
-mean_plus_std = '%.4g'%(np.mean(final_result) + np.std(final_result))
-mean_minus_std = '%.4g'%(np.mean(final_result) - np.std(final_result))
-
-print('mean: ', mean)
-print('std: ', std)
-print('mean+std: ', mean_plus_std)
-print('mean-std: ', mean_minus_std)
-
-with open('AutoHomotopy_1d.txt', 'a') as f:
-    f.write('final result: '+str(final_result)+'\n')
-    f.write('mean: '+mean+'\n')
-    f.write('std: '+std+'\n')
-    f.write('mean+std: '+mean_plus_std+'\n')
-    f.write('mean-std: '+mean_minus_std+'\n')
+    print("final x is: ",x_opt)
+    errorx = np.linalg.norm(x_opt-x_optimal)
+    errory = np.linalg.norm(gramacy_and_lee(x_opt)- gramacy_and_lee(x_optimal))
+    with open("./results/pinns_1d_eval.txt", "a") as f:
+        f.write("seed {}: error (input) is {}, error (output) is {}\n".format(seed, errorx, errory))
 
 
 

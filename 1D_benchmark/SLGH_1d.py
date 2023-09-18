@@ -49,25 +49,9 @@ for seed in SEED_list:
         grad_x, grad_t = grad_estimate(t, M, x, gramacy_and_lee)
         x = x - beta*grad_x
         if t>0:
-            # t = gamma*t
-            t = np.maximum(np.minimum(t*gamma,t-eta*grad_t), 1e-10)
-    print('final error for seed {}'.format(seed),np.linalg.norm(x-x_optimal))
-    final_result.append(np.linalg.norm(x-x_optimal))
-
-print('final result: ', final_result)
-mean = '%.4g'%np.mean(final_result)
-std = '%.4g'%np.std(final_result)
-mean_plus_std = '%.4g'%(np.mean(final_result) + np.std(final_result))
-mean_minus_std = '%.4g'%(np.mean(final_result) - np.std(final_result))
-
-print('mean: ', mean)
-print('std: ', std)
-print('mean+std: ', mean_plus_std)
-print('mean-std: ', mean_minus_std)
-
-with open('./results/SLGH_d_1d.txt', 'w') as f:
-    f.write('final result: '+str(final_result)+'\n')
-    f.write('mean: '+mean+'\n')
-    f.write('std: '+std+'\n')
-    f.write('mean+std: '+mean_plus_std+'\n')
-    f.write('mean-std: '+mean_minus_std+'\n')
+            t = gamma*t
+            # t = np.maximum(np.minimum(t*gamma,t-eta*grad_t), 1e-10)
+    errorx = np.linalg.norm(x-x_optimal)
+    errory = np.linalg.norm(gramacy_and_lee(x)- gramacy_and_lee(x_optimal))
+    with open("./results/SLGH_r_1d_eval.txt", "a") as f:
+        f.write("seed {}: error (input) is {}, error (output) is {}\n".format(seed, errorx, errory))

@@ -1,0 +1,11 @@
+Evaluation results for pinns with langermann:
+seed 1: error (input) is 15.452927010072635, error (output) is 0.18516717055358722
+seed 2: error (input) is 31.35205865768242, error (output) is 0.18516717055358722
+seed 3: error (input) is 14.082801589940658, error (output) is 0.1851653208504251
+seed 4: error (input) is 30.826057197928804, error (output) is 0.18516717055358722
+seed 5: error (input) is 30.376378685146186, error (output) is 0.18516717055358722
+seed 6: error (input) is 27.971037780571383, error (output) is 0.18516717055358722
+seed 7: error (input) is 33.29023665723668, error (output) is 0.18516717055358722
+seed 8: error (input) is 39.25093512161673, error (output) is 0.18516717055358722
+seed 9: error (input) is 32.08831482266052, error (output) is 0.18516717055358722
+seed 10: error (input) is 36.09926037267769, error (output) is 0.18516717055358722

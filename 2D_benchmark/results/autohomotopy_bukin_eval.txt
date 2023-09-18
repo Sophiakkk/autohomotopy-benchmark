@@ -1,0 +1,11 @@
+Evaluation results for autohomotopy with bukin:
+seed 1: error (input) is 15.43819729609951, error (output) is 376.1503601074219
+seed 2: error (input) is 31.334438572438053, error (output) is 558.7725219726562
+seed 3: error (input) is 14.041528111381309, error (output) is 367.8694763183594
+seed 4: error (input) is 30.865993482826457, error (output) is 254.41864013671875
+seed 5: error (input) is 30.36872337846841, error (output) is 457.9868469238281
+seed 6: error (input) is 27.994856620383, error (output) is 420.0325622558594
+seed 7: error (input) is 33.29023665723668, error (output) is 326.478271484375
+seed 8: error (input) is 39.265848976055764, error (output) is 497.4063415527344
+seed 9: error (input) is 32.08835725960524, error (output) is 319.0715026855469
+seed 10: error (input) is 36.092049724149504, error (output) is 588.13818359375

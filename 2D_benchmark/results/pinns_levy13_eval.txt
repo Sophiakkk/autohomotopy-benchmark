@@ -1,0 +1,11 @@
+Evaluation results for pinns with levy13:
+seed 1: error (input) is 16.796475106033284, error (output) is 353.427978515625
+seed 2: error (input) is 31.350781246245415, error (output) is 1245.1900634765625
+seed 3: error (input) is 16.777677698806247, error (output) is 323.0916442871094
+seed 4: error (input) is 12.927777402589728, error (output) is 269.3768310546875
+seed 5: error (input) is 31.30734209705972, error (output) is 1507.372314453125
+seed 6: error (input) is 20.658222857752378, error (output) is 784.5908203125
+seed 7: error (input) is 62.60128982305551, error (output) is 7961.3916015625
+seed 8: error (input) is 36.28386102248879, error (output) is 1672.79052734375
+seed 9: error (input) is 30.399828411268093, error (output) is 1498.2071533203125
+seed 10: error (input) is 36.092049724149504, error (output) is 1762.1148681640625

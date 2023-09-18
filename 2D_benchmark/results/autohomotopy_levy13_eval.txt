@@ -1,0 +1,11 @@
+Evaluation results for autohomotopy with levy13:
+seed 1: error (input) is 15.429272153450048, error (output) is 275.1269226074219
+seed 2: error (input) is 31.350781246245415, error (output) is 1245.1900634765625
+seed 3: error (input) is 14.041528111381309, error (output) is 259.56231689453125
+seed 4: error (input) is 30.763393772996817, error (output) is 1417.8924560546875
+seed 5: error (input) is 30.36872337846841, error (output) is 1452.09765625
+seed 6: error (input) is 28.002351399297396, error (output) is 762.8709106445312
+seed 7: error (input) is 33.279718988450384, error (output) is 1342.81787109375
+seed 8: error (input) is 39.265848976055764, error (output) is 2323.22998046875
+seed 9: error (input) is 32.08835468532694, error (output) is 2013.0269775390625
+seed 10: error (input) is 36.092049724149504, error (output) is 1762.1148681640625

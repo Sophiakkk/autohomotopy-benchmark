@@ -4,6 +4,7 @@ import numpy as np
 from two_dim_funcs import *
 import numdifftools as nd
 from torch.utils.data import DataLoader, TensorDataset
+from torch.autograd import Variable
 
 
 # your algorithm is class(object):
@@ -351,19 +352,18 @@ class SLGH_d_Evaluator(object):
 class PINNs_Evaluator(object):
     def __init__(self,
                  net: nn.Module,
-                 model_path: str,
                  x_range: np.ndarray,
                  tmax: int,
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
+                 method_name: str,
                  total_iterations: int = 10000,
                  step_size: float = 0.001,
                  ):
-        self.net = net
-        self.net.load_state_dict(torch.load(model_path))
-        self.net.eval()
+        self.net = net.eval()
         self.seed = seed
+        self.init_func_name = init_func_name
         self.init_func = pick_function(init_func_name)
         self.xmin = x_range[:,0]
         self.xmax = x_range[:,1]
@@ -371,29 +371,48 @@ class PINNs_Evaluator(object):
         self.total_iterations = total_iterations
         self.step_size = step_size
         self.x_opt = x_opt
+        self.method_name = method_name
 
     def initalizer(self):
         # Set the random seed
         np.random.seed(self.seed)
         self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
 
+    def get_grad(self, x):
+        T = torch.tensor([[self.tmax]], dtype=torch.float32)
+        input = torch.cat((x,T),1).requires_grad_(True)
+        u = self.net(input)
+        with torch.no_grad():
+            grad_x = torch.autograd.grad(u, input)[0][0][:2]
+        return grad_x
+
+    def evaluate(self):
+        x = torch.tensor(self.initial_x, dtype=torch.float32)
+        # perform gradient descent
+        for i in range(self.total_iterations):
+            grad_x = self.get_grad(x)
+            # grad_x = grad_x/np.linalg.norm(grad_x)
+            x = x - self.step_size*grad_x
+        errorx = np.linalg.norm(x-self.x_opt)
+        errory = np.linalg.norm(self.init_func(x[0][0],x[0][1])- self.init_func(self.x_opt[0],self.x_opt[1]))
+        with open("./results/{}_{}_eval.txt".format(self.method_name,self.init_func_name), "a") as f:
+            f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
 
 class AutoHomotopy_Evaluator(object):
     def __init__(self,
                  net: nn.Module,
-                 model_path: str,
                  x_range: np.ndarray,
                  tmax: int,
                  init_func_name: str,
                  seed: int,
                  x_opt: np.ndarray,
+                 method_name: str,
                  total_iterations: int = 10000,
                  step_size: float = 0.001,
                  ):
-        self.net = net
-        self.net.load_state_dict(torch.load(model_path))
-        self.net.eval()
+        self.net = net.eval()
         self.seed = seed
+        self.init_func_name = init_func_name
         self.init_func = pick_function(init_func_name)
         self.xmin = x_range[:,0]
         self.xmax = x_range[:,1]
@@ -401,8 +420,29 @@ class AutoHomotopy_Evaluator(object):
         self.total_iterations = total_iterations
         self.step_size = step_size
         self.x_opt = x_opt
+        self.method_name = method_name
 
     def initalizer(self):
         # Set the random seed
         np.random.seed(self.seed)
         self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
+
+    def get_grad(self, x):
+        T = torch.tensor([[self.tmax]], dtype=torch.float32)
+        input = torch.cat((x,T),1).requires_grad_(True)
+        u = self.net(input)
+        with torch.no_grad():
+            grad_x = torch.autograd.grad(u, input)[0][0][:2]
+        return grad_x
+
+    def evaluate(self):
+        x = torch.tensor(self.initial_x, dtype=torch.float32)
+        # perform gradient descent
+        for i in range(self.total_iterations):
+            grad_x = self.get_grad(x)
+            # grad_x = grad_x/np.linalg.norm(grad_x)
+            x = x - self.step_size*grad_x
+        errorx = np.linalg.norm(x-self.x_opt)
+        errory = np.linalg.norm(self.init_func(x[0][0],x[0][1])- self.init_func(self.x_opt[0],self.x_opt[1]))
+        with open("./results/{}_{}_eval.txt".format(self.method_name,self.init_func_name), "a") as f:
+            f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))

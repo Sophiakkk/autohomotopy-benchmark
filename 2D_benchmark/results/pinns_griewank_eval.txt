@@ -1,0 +1,11 @@
+Evaluation results for pinns with griewank:
+seed 1: error (input) is 14.558445810903255, error (output) is 1.6957776546478271
+seed 2: error (input) is 31.68191446411903, error (output) is 0.567907989025116
+seed 3: error (input) is 12.40283163361896, error (output) is 0.4687621593475342
+seed 4: error (input) is 31.27960574412254, error (output) is 1.820035696029663
+seed 5: error (input) is 30.30804551245746, error (output) is 1.2804360389709473
+seed 6: error (input) is 28.258637501603168, error (output) is 1.0406107902526855
+seed 7: error (input) is 32.89879575177129, error (output) is 2.1488897800445557
+seed 8: error (input) is 39.59172856010822, error (output) is 2.3435001373291016
+seed 9: error (input) is 31.974081905257368, error (output) is 0.41260313987731934
+seed 10: error (input) is 36.67515061432044, error (output) is 2.071632146835327
