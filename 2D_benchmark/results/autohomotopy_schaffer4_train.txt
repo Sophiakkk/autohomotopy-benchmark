@@ -1,0 +1,4 @@
+Method: autohomotopy
+Function: schaffer4
+Max Timestep: 50
+Running Time: 75574.08423306118

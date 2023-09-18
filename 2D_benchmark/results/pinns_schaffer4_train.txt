@@ -1,0 +1,4 @@
+Method: pinns
+Function: schaffer4
+Max Timestep: 50
+Running Time: 126663.141959714
