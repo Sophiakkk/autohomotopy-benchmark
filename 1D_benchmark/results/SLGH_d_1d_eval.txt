@@ -1,0 +1,10 @@
+seed 1: error (input) is 0.44696835485150344, error (output) is 0.5266659822231528
+seed 2: error (input) is 0.2467784462319247, error (output) is 0.6633410421731926
+seed 3: error (input) is 0.6471222866636568, error (output) is 0.4345162419527071
+seed 4: error (input) is 1.619933835108333, error (output) is 1.4345327224133972
+seed 5: error (input) is 0.8423337258626737, error (output) is 1.8254064345113845
+seed 6: error (input) is 1.619933832925691, error (output) is 1.434532722413399
+seed 7: error (input) is 1.2141896868413393, error (output) is 8.331848302858253
+seed 8: error (input) is 1.6199338329593835, error (output) is 1.434532722413397
+seed 9: error (input) is 1.2141896786106159, error (output) is 8.331848302858242
+seed 10: error (input) is 1.6199338342030967, error (output) is 1.4345327224133988

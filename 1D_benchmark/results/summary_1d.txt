@@ -1,0 +1,30 @@
+Senario: GD
+avg error (input): 1.089
+std error (input): 0.5323
+avg error (output): 2.599
+std error (output): 2.897
+-----------------------------------------
+Senario: SLGH_r
+avg error (input): 1.699
+std error (input): 1.327
+avg error (output): 4.744
+std error (output): 4.243
+-----------------------------------------
+Senario: SLGH_d
+avg error (input): 1.109
+std error (input): 0.5032
+avg error (output): 2.585
+std error (output): 2.907
+-----------------------------------------
+Senario: autohomotopy
+avg error (input): 0.2741
+std error (input): 0.2246
+avg error (output): 0.6986
+std error (output): 0.2251
+-----------------------------------------
+Senario: pinns
+avg error (input): 1.198
+std error (input): 0.7366
+avg error (output): 4.978
+std error (output): 5.816
+-----------------------------------------
