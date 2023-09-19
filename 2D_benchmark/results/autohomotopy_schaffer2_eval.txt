@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with schaffer2:
-seed 1: error (input) is 15.429272153450048, error (output) is 0.18895772099494934
-seed 2: error (input) is 31.350781246245415, error (output) is 0.5705540180206299
-seed 3: error (input) is 14.041528111381309, error (output) is 0.5997469425201416
-seed 4: error (input) is 30.763393772996817, error (output) is 0.41865843534469604
-seed 5: error (input) is 30.36872337846841, error (output) is 0.4908643662929535
-seed 6: error (input) is 28.002351399297396, error (output) is 0.6307618618011475
-seed 7: error (input) is 33.279718988450384, error (output) is 0.5341851115226746
-seed 8: error (input) is 39.265848976055764, error (output) is 0.576836884021759
-seed 9: error (input) is 32.08835468532694, error (output) is 0.5059856176376343
-seed 10: error (input) is 36.092049724149504, error (output) is 0.5599345564842224
+seed 1: error (input) is 47.0864018944749, error (output) is 0.5391269326210022
+seed 2: error (input) is 95.67498654001774, error (output) is 0.5038082003593445
+seed 3: error (input) is 42.851345974783584, error (output) is 0.487344354391098
+seed 4: error (input) is 93.88242767580935, error (output) is 0.5001386404037476
+seed 5: error (input) is 92.67798791930771, error (output) is 0.49535831809043884
+seed 6: error (input) is 85.4563932365, error (output) is 0.5038512945175171
+seed 7: error (input) is 101.5616448429403, error (output) is 0.4961034655570984
+seed 8: error (input) is 119.82985713564389, error (output) is 0.5015386343002319
+seed 9: error (input) is 97.92588860622163, error (output) is 0.5023082494735718
+seed 10: error (input) is 110.14419359540781, error (output) is 0.49734580516815186

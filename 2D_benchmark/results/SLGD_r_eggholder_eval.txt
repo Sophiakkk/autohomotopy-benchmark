@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with eggholder:
+seed 1: error (input) is 630.2471458782966, error (output) is 656.0198948104894
+seed 2: error (input) is 1128.4062186217784, error (output) is 549.1136101877162
+seed 3: error (input) is 540.535462893493, error (output) is 792.0184658301306
+seed 4: error (input) is 353.65191901328734, error (output) is 446.76982371407144
+seed 5: error (input) is 794.1195333231287, error (output) is 504.8203444825939
+seed 6: error (input) is 533.6529728954786, error (output) is 541.6175921011807
+seed 7: error (input) is 972.3033006545787, error (output) is 71.22692610820536
+seed 8: error (input) is 189.43773110775095, error (output) is 71.17194050355738
+seed 9: error (input) is 1093.3075868905585, error (output) is 402.274049054565
+seed 10: error (input) is 920.30464448196, error (output) is 241.53037910462967

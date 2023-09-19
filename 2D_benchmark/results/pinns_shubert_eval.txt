@@ -1,11 +1,11 @@
 Evaluation results for pinns with shubert:
-seed 1: error (input) is 15.43819729609951, error (output) is 10.980360984802246
-seed 2: error (input) is 31.350781246245415, error (output) is 17.013940811157227
-seed 3: error (input) is 14.057803477517153, error (output) is 19.339906692504883
-seed 4: error (input) is 30.763393772996817, error (output) is 3.86456298828125
-seed 5: error (input) is 30.36872337846841, error (output) is 39.058135986328125
-seed 6: error (input) is 28.002351399297396, error (output) is 20.07472038269043
-seed 7: error (input) is 33.279718988450384, error (output) is 26.909543991088867
-seed 8: error (input) is 39.265848976055764, error (output) is 129.05844116210938
-seed 9: error (input) is 32.08835468532694, error (output) is 20.462146759033203
-seed 10: error (input) is 36.07545283063103, error (output) is 32.8892707824707
+seed 1: error (input) is 5.211715972132814, error (output) is 161.17605590820312
+seed 2: error (input) is 8.68228882872392, error (output) is 172.7218017578125
+seed 3: error (input) is 5.525135872246653, error (output) is 181.4973602294922
+seed 4: error (input) is 10.914784568067143, error (output) is 183.63427734375
+seed 5: error (input) is 9.226869211055224, error (output) is 183.41981506347656
+seed 6: error (input) is 9.645393748171898, error (output) is 187.43887329101562
+seed 7: error (input) is 9.560263594662073, error (output) is 211.47781372070312
+seed 8: error (input) is 13.510217940649335, error (output) is 189.33253479003906
+seed 9: error (input) is 8.42750846747896, error (output) is 195.41993713378906
+seed 10: error (input) is 11.156945470299846, error (output) is 176.0379180908203

@@ -1,0 +1,11 @@
+Evaluation results for GD with levy13:
+seed 1: error (input) is 4.421387657112677, error (output) is 37.655476216644125
+seed 2: error (input) is 10.714666933314126, error (output) is 123.40287726821276
+seed 3: error (input) is 3.1469984008705882, error (output) is 16.2069059221844
+seed 4: error (input) is 6.529061680493321, error (output) is 64.47574448383745
+seed 5: error (input) is 10.032647307550649, error (output) is 154.5930888522861
+seed 6: error (input) is 8.160543968651085, error (output) is 71.33470749476854
+seed 7: error (input) is 12.017478693204595, error (output) is 274.91972840459863
+seed 8: error (input) is 4.742754958467618, error (output) is 41.04448557724733
+seed 9: error (input) is 7.344375416216757, error (output) is 71.9314909754774
+seed 10: error (input) is 12.417409282257541, error (output) is 178.09072266959637

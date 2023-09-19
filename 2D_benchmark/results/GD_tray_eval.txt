@@ -1,0 +1,11 @@
+Evaluation results for GD with tray:
+seed 1: error (input) is 5.919206327648956, error (output) is 0.17498127286627585
+seed 2: error (input) is 8.315072594567177, error (output) is 0.6664391409310886
+seed 3: error (input) is 6.526105326056422, error (output) is 0.1750921349024599
+seed 4: error (input) is 9.264696556978857, error (output) is 0.46584636429385395
+seed 5: error (input) is 10.169604934719398, error (output) is 0.4474135928464973
+seed 6: error (input) is 9.254482914362873, error (output) is 0.5183917126661033
+seed 7: error (input) is 9.982618974874867, error (output) is 0.931592954416482
+seed 8: error (input) is 14.058721050191837, error (output) is 0.9159238629097903
+seed 9: error (input) is 9.228342210288467, error (output) is 0.5678690575247818
+seed 10: error (input) is 10.795150957936762, error (output) is 0.5729711013948482

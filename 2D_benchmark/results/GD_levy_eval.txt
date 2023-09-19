@@ -1,0 +1,11 @@
+Evaluation results for GD with levy:
+seed 1: error (input) is 4.495797526732123, error (output) is 15.88589058908651
+seed 2: error (input) is 12.050665670607522, error (output) is 186.16915721567347
+seed 3: error (input) is 2.3642760936510094, error (output) is 4.698932106859468
+seed 4: error (input) is 6.701504337592535, error (output) is 3.9968554704906034
+seed 5: error (input) is 9.37166070656214, error (output) is 65.30245624598733
+seed 6: error (input) is 7.993503555644126, error (output) is 41.332904274035755
+seed 7: error (input) is 10.057861743421462, error (output) is 35.999978048468975
+seed 8: error (input) is 12.867554418073244, error (output) is 99.99999999999535
+seed 9: error (input) is 10.496905640380305, error (output) is 1.3533806382486095
+seed 10: error (input) is 12.3720803587682, error (output) is 143.99999964942091

@@ -1,0 +1,11 @@
+Evaluation results for GD with eggholder:
+seed 1: error (input) is 632.4252754895206, error (output) is 755.6329456953388
+seed 2: error (input) is 1132.4947114602212, error (output) is 525.8736680686962
+seed 3: error (input) is 494.3758422123301, error (output) is 1162.700229104255
+seed 4: error (input) is 259.5971697213786, error (output) is 624.6408744033724
+seed 5: error (input) is 836.4347813662657, error (output) is 1060.398043896015
+seed 6: error (input) is 633.2964550060494, error (output) is 1120.6639988184495
+seed 7: error (input) is 1002.8270628640129, error (output) is 999.955812853922
+seed 8: error (input) is 218.68938173373513, error (output) is 1468.7297812955976
+seed 9: error (input) is 1113.7610277971235, error (output) is 426.0452903371811
+seed 10: error (input) is 919.6744257349541, error (output) is 241.63837224931945

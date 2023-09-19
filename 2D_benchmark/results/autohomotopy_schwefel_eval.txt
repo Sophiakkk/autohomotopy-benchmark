@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with schwefel:
-seed 1: error (input) is 15.429272153450048, error (output) is 12.77081298828125
-seed 2: error (input) is 31.350781246245415, error (output) is 16.50787353515625
-seed 3: error (input) is 14.041528111381309, error (output) is 3.92852783203125
-seed 4: error (input) is 30.763393772996817, error (output) is 17.84051513671875
-seed 5: error (input) is 30.36872337846841, error (output) is 7.274658203125
-seed 6: error (input) is 28.002351399297396, error (output) is 22.1444091796875
-seed 7: error (input) is 33.279718988450384, error (output) is 6.88909912109375
-seed 8: error (input) is 39.265848976055764, error (output) is 44.54949951171875
-seed 9: error (input) is 32.08835468532694, error (output) is 18.6485595703125
-seed 10: error (input) is 36.092049724149504, error (output) is 4.0804443359375
+seed 1: error (input) is 542.4208429631565, error (output) is 696.0819702148438
+seed 2: error (input) is 1017.9885019967417, error (output) is 1003.778076171875
+seed 3: error (input) is 426.9884591413557, error (output) is 600.5548095703125
+seed 4: error (input) is 376.56415534061546, error (output) is 638.3617553710938
+seed 5: error (input) is 700.7784926377942, error (output) is 463.3142395019531
+seed 6: error (input) is 589.6592242268438, error (output) is 578.4407958984375
+seed 7: error (input) is 856.3564018400086, error (output) is 1494.9443359375
+seed 8: error (input) is 67.25380431294737, error (output) is 508.6471862792969
+seed 9: error (input) is 1002.4082570869311, error (output) is 769.5790405273438
+seed 10: error (input) is 912.5703977029558, error (output) is 1073.2054443359375

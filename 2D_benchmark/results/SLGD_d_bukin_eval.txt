@@ -1,0 +1,11 @@
+Evaluation results for SLGD_d with bukin:
+seed 1: error (input) is 0.6393631719182039, error (output) is 62.83411931420523
+seed 2: error (input) is 0.5085297954223079, error (output) is 71.43675942026624
+seed 3: error (input) is 3.5064534252504087, error (output) is 58.58623567443549
+seed 4: error (input) is 6.400678309057764, error (output) is 187.87116753617437
+seed 5: error (input) is 3.1207836152749167, error (output) is 51.147433309243304
+seed 6: error (input) is 0.21961221875433845, error (output) is 36.1625728093227
+seed 7: error (input) is 2.5488375823814162, error (output) is 33.098598902755505
+seed 8: error (input) is 8.67080781641206, error (output) is 66.90222321496626
+seed 9: error (input) is 1.3667222331805513, error (output) is 96.51469349226349
+seed 10: error (input) is 6.200822269343989, error (output) is 240.141018869885

@@ -5,6 +5,7 @@ from two_dim_funcs import *
 import numdifftools as nd
 from torch.utils.data import DataLoader, TensorDataset
 from torch.autograd import Variable
+import math
 
 
 # your algorithm is class(object):
@@ -220,7 +221,7 @@ class GDEvaluator(object):
             x = x - self.step_size*grad_x
         errorx = np.linalg.norm(x-self.x_opt)
         errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
-        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+        with open("./results/{}_{}_eval.txt".format(self.method_name,self.init_func_name), "a") as f:
             f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
         
 class SLGH_r_Evaluator(object):
@@ -282,7 +283,7 @@ class SLGH_r_Evaluator(object):
                 t = self.discount_factor*t
         errorx = np.linalg.norm(x-self.x_opt)
         errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
-        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+        with open("./results/{}_{}_eval.txt".format(self.method_name,self.init_func_name), "a") as f:
             f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
 
 class SLGH_d_Evaluator(object):
@@ -332,7 +333,7 @@ class SLGH_d_Evaluator(object):
                 grad_x += 1/self.num_samples*v*(f_tmp-f_init)/t
                 # gradient of t
                 grad_t += 1/self.num_samples*(np.inner(v,v)-d)*(f_tmp-f_init)/t**2
-            else:
+            elif math.isnan(x[0]) == False:
                 grad_x = nd.Gradient(self.init_func)(x[0],x[1])
         return grad_x, grad_t
 
@@ -346,7 +347,7 @@ class SLGH_d_Evaluator(object):
                 t = np.maximum(np.minimum(t*self.discount_factor,t-self.threshold*grad_t), 1e-10)
         errorx = np.linalg.norm(x-self.x_opt)
         errory = np.linalg.norm(self.init_func(x[0],x[1])- self.init_func(self.x_opt[0],self.x_opt[1]))
-        with open("./results/{}_{}.txt".format(self.method_name,self.init_func_name), "a") as f:
+        with open("./results/{}_{}_eval.txt".format(self.method_name,self.init_func_name), "a") as f:
             f.write("seed {}: error (input) is {}, error (output) is {}\n".format(self.seed, errorx, errory))
 
 class PINNs_Evaluator(object):

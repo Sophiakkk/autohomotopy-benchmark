@@ -1,0 +1,11 @@
+Evaluation results for GD with schaffer4:
+seed 1: error (input) is 46.66106708429147, error (output) is 0.18731927736851062
+seed 2: error (input) is 95.50699637390746, error (output) is 0.2122726883419413
+seed 3: error (input) is 43.17895737529387, error (output) is 0.2695283460531817
+seed 4: error (input) is 95.12425009959058, error (output) is 0.20526056012889754
+seed 5: error (input) is 91.9317667488413, error (output) is 0.2126642220358979
+seed 6: error (input) is 86.60925728918225, error (output) is 0.20467917315239897
+seed 7: error (input) is 100.51843291098498, error (output) is 0.21132688592154586
+seed 8: error (input) is 120.61496991210701, error (output) is 0.20682579265544282
+seed 9: error (input) is 96.66747509452519, error (output) is 0.21187953927817
+seed 10: error (input) is 110.7668512494025, error (output) is 0.21021045197845606

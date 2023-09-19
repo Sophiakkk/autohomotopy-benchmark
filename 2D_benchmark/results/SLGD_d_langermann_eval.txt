@@ -1,0 +1,11 @@
+Evaluation results for SLGD_d with langermann:
+seed 1: error (input) is 8.564497879112764, error (output) is 1.079629331196109
+seed 2: error (input) is 5.512211458278656, error (output) is 0.8254287195914376
+seed 3: error (input) is 7.4717718057292934, error (output) is 1.0448744350626775
+seed 4: error (input) is 4.817395263728655, error (output) is 1.0621347334064106
+seed 5: error (input) is 10.96839008939214, error (output) is 1.0808974505843663
+seed 6: error (input) is 2.8122801458236264, error (output) is 0.7447321131665315
+seed 7: error (input) is 11.4191966881573, error (output) is 1.0809384604722958
+seed 8: error (input) is 8.477371736397854, error (output) is 1.342181095407275
+seed 9: error (input) is 10.534118741003246, error (output) is 1.0807541296220256
+seed 10: error (input) is 1.9919992922070713, error (output) is 0.777226127335332

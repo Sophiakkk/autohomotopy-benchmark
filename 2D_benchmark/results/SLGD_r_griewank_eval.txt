@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with griewank:
+seed 1: error (input) is 279.70895932420814, error (output) is 19.560722312496654
+seed 2: error (input) is 573.0322097140001, error (output) is 82.19092091450156
+seed 3: error (input) is 256.41452384498456, error (output) is 16.44731463919368
+seed 4: error (input) is 561.4388403106302, error (output) is 78.88377486988412
+seed 5: error (input) is 554.7698041765575, error (output) is 77.00739798548919
+seed 6: error (input) is 508.82654146765185, error (output) is 64.74750452167677
+seed 7: error (input) is 605.4345432164952, error (output) is 91.66862868838787
+seed 8: error (input) is 715.3102706297042, error (output) is 127.99483756354923
+seed 9: error (input) is 586.8846347835643, error (output) is 86.39621816193639
+seed 10: error (input) is 657.6497992283637, error (output) is 108.20123857771036

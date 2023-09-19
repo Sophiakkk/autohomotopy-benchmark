@@ -1,0 +1,11 @@
+Evaluation results for SLGD_d with rastrigin:
+seed 1: error (input) is 4.368077972592627e-09, error (output) is 3.552713678800501e-15
+seed 2: error (input) is 4.405565408949341e-09, error (output) is 3.552713678800501e-15
+seed 3: error (input) is 3.267945142449473e-09, error (output) is 1.7763568394002505e-15
+seed 4: error (input) is 5.034233836303573e-09, error (output) is 5.329070518200751e-15
+seed 5: error (input) is 3.646019189468341e-09, error (output) is 3.552713678800501e-15
+seed 6: error (input) is 4.01908586421458e-09, error (output) is 3.552713678800501e-15
+seed 7: error (input) is 3.688353892941131e-09, error (output) is 3.552713678800501e-15
+seed 8: error (input) is 4.464537084768364e-09, error (output) is 3.552713678800501e-15
+seed 9: error (input) is 5.007644947398931e-09, error (output) is 5.329070518200751e-15
+seed 10: error (input) is 9.832276764221359e-10, error (output) is 0.0

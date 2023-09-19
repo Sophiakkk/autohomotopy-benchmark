@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with shubert:
+seed 1: error (input) is 5.221236796572938, error (output) is 134.181104253556
+seed 2: error (input) is 8.486702886297154, error (output) is 140.22003253034092
+seed 3: error (input) is 5.5534147930836975, error (output) is 163.59639838031515
+seed 4: error (input) is 11.107371051011041, error (output) is 173.17974971233866
+seed 5: error (input) is 9.322270885021476, error (output) is 175.75238302460764
+seed 6: error (input) is 9.422917990201634, error (output) is 179.0030483090212
+seed 7: error (input) is 9.724454699569991, error (output) is 134.1804447164348
+seed 8: error (input) is 13.42251957953304, error (output) is 173.17973418671826
+seed 9: error (input) is 7.885286983868808, error (output) is 155.95057098829227
+seed 10: error (input) is 10.557378541288458, error (output) is 140.22141516726492

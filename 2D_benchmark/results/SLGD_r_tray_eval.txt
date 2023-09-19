@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with tray:
+seed 1: error (input) is 5.753195177494948, error (output) is 0.17292791677031571
+seed 2: error (input) is 6.832778103540472, error (output) is 0.3825804621633042
+seed 3: error (input) is 6.2879883941029835, error (output) is 0.17507264127574063
+seed 4: error (input) is 9.842788577771005, error (output) is 0.37928399379998323
+seed 5: error (input) is 9.541319361045211, error (output) is 0.4180823420876505
+seed 6: error (input) is 9.442306637398195, error (output) is 0.42035115959371305
+seed 7: error (input) is 9.039267243992734, error (output) is 0.4262368051042933
+seed 8: error (input) is 13.082822080581042, error (output) is 0.5372887720972246
+seed 9: error (input) is 9.346212659418242, error (output) is 0.537869550630929
+seed 10: error (input) is 10.948474331120446, error (output) is 0.5696647807851964

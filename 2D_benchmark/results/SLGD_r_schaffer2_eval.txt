@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with schaffer2:
+seed 1: error (input) is 47.10823195003764, error (output) is 0.45197168588522296
+seed 2: error (input) is 95.66980230253196, error (output) is 0.4952422021163785
+seed 3: error (input) is 42.87706854259925, error (output) is 0.45157032657509627
+seed 4: error (input) is 93.8887962430919, error (output) is 0.4948099496844901
+seed 5: error (input) is 92.67921589806312, error (output) is 0.49457022430749
+seed 6: error (input) is 85.46801618282463, error (output) is 0.49278219665176054
+seed 7: error (input) is 101.56085467221253, error (output) is 0.49609829519650545
+seed 8: error (input) is 119.83010175102045, error (output) is 0.49788858954091253
+seed 9: error (input) is 97.93684089901495, error (output) is 0.49557122798001263
+seed 10: error (input) is 110.1502596049864, error (output) is 0.49714498831231946

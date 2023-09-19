@@ -1,0 +1,11 @@
+Evaluation results for GD with rastrigin:
+seed 1: error (input) is 2.333595458251125, error (output) is 7.78006100056834
+seed 2: error (input) is 5.288498926723624, error (output) is 34.53045468222632
+seed 3: error (input) is 2.789683648720654, error (output) is 25.641616623699033
+seed 4: error (input) is 5.020406543285771, error (output) is 39.81650024314032
+seed 5: error (input) is 4.721443904940049, error (output) is 37.78894436228795
+seed 6: error (input) is 4.353053350251033, error (output) is 28.174230628837066
+seed 7: error (input) is 5.122549678070643, error (output) is 34.76838351789726
+seed 8: error (input) is 6.3543727267403876, error (output) is 40.878371252678356
+seed 9: error (input) is 4.975032682150918, error (output) is 25.539958753391968
+seed 10: error (input) is 5.568524140514519, error (output) is 44.08598399355509

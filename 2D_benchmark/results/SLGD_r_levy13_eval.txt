@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with levy13:
+seed 1: error (input) is 0.0002734351474801246, error (output) is 4.630567939183185e-06
+seed 2: error (input) is 0.0009153916408551977, error (output) is 1.455464512582812e-06
+seed 3: error (input) is 0.0004580160416970919, error (output) is 2.137054606367628e-06
+seed 4: error (input) is 0.0020220770917423665, error (output) is 4.886604153714114e-06
+seed 5: error (input) is 0.0014719471466592751, error (output) is 3.3328127564624743e-06
+seed 6: error (input) is 0.001052248153402005, error (output) is 5.267926432555419e-06
+seed 7: error (input) is 0.0002505990716604415, error (output) is 3.779440712056568e-06
+seed 8: error (input) is 0.0004988962143994553, error (output) is 3.416664735410197e-06
+seed 9: error (input) is 0.00022694979830397577, error (output) is 2.89460404479208e-07
+seed 10: error (input) is 0.0005444677642402478, error (output) is 3.4422750939890415e-07

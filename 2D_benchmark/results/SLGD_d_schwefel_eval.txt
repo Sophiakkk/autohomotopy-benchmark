@@ -1,0 +1,11 @@
+Evaluation results for SLGD_d with schwefel:
+seed 1: error (input) is 580.335151990322, error (output) is 519.7936029728766
+seed 2: error (input) is 1081.2279612925145, error (output) is 353.905114740802
+seed 3: error (input) is 417.7799272417709, error (output) is 572.8889616862893
+seed 4: error (input) is 357.7056384837887, error (output) is 358.37022510800335
+seed 5: error (input) is 721.1588337439649, error (output) is 122.67061778450864
+seed 6: error (input) is 550.9524812322533, error (output) is 300.4037209715922
+seed 7: error (input) is 898.3498815082106, error (output) is 947.681713548225
+seed 8: error (input) is 6.6239859068471345, error (output) is 5.529104479357613
+seed 9: error (input) is 1057.6657625268442, error (output) is 284.2905635377243
+seed 10: error (input) is 992.167155205376, error (output) is 103.81674612714835

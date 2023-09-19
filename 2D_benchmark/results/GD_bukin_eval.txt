@@ -1,0 +1,11 @@
+Evaluation results for GD with bukin:
+seed 1: error (input) is 0.9974387543496285, error (output) is 19.40842729960525
+seed 2: error (input) is 2.762668726075659, error (output) is 12.091262864926668
+seed 3: error (input) is 0.20308784530074914, error (output) is 17.21841874513334
+seed 4: error (input) is 4.691838643334044, error (output) is 21.20456190410002
+seed 5: error (input) is 3.395801017900043, error (output) is 31.574164467478703
+seed 6: error (input) is 5.26036369328456, error (output) is 20.96587155102076
+seed 7: error (input) is 4.0952883201700905, error (output) is 17.160474376571592
+seed 8: error (input) is 1.6930864825840712, error (output) is 24.23317134991467
+seed 9: error (input) is 3.353906036416323, error (output) is 39.901823305593126
+seed 10: error (input) is 5.863994405810077, error (output) is 22.040876397786043

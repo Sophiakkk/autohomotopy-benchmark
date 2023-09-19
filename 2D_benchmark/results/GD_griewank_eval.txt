@@ -1,0 +1,11 @@
+Evaluation results for GD with griewank:
+seed 1: error (input) is 282.5450033386563, error (output) is 20.92620862835553
+seed 2: error (input) is 572.4020965245143, error (output) is 82.2871359717899
+seed 3: error (input) is 258.52629135874565, error (output) is 17.669450025369976
+seed 4: error (input) is 565.052309248881, error (output) is 79.93233160548431
+seed 5: error (input) is 556.2583455947079, error (output) is 77.91621264668964
+seed 6: error (input) is 512.2165801041449, error (output) is 66.36551142394315
+seed 7: error (input) is 609.3288130082552, error (output) is 93.48834074318852
+seed 8: error (input) is 715.8398649233748, error (output) is 128.14274025143237
+seed 9: error (input) is 586.8529501690119, error (output) is 86.69918219354179
+seed 10: error (input) is 661.0491691537231, error (output) is 110.25568442984583

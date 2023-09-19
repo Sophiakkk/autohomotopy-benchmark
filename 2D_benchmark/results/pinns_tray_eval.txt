@@ -1,0 +1,11 @@
+Evaluation results for pinns with tray:
+seed 1: error (input) is 6.772405114884169, error (output) is inf
+seed 2: error (input) is 7.7780208331025, error (output) is inf
+seed 3: error (input) is 5.768688249732211, error (output) is inf
+seed 4: error (input) is 9.565393695992698, error (output) is inf
+seed 5: error (input) is 9.556848200226879, error (output) is inf
+seed 6: error (input) is 9.660920640313707, error (output) is inf
+seed 7: error (input) is 9.997401782064772, error (output) is inf
+seed 8: error (input) is 14.540173668387434, error (output) is inf
+seed 9: error (input) is 8.587433718131813, error (output) is inf
+seed 10: error (input) is 12.313842205424129, error (output) is inf

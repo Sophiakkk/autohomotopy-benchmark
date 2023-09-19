@@ -1,11 +1,11 @@
 Evaluation results for pinns with eggholder:
-seed 1: error (input) is 153.87983394635128, error (output) is 83.21104431152344
-seed 2: error (input) is 154.42673549518744, error (output) is 35.47051239013672
-seed 3: error (input) is 141.32570962340725, error (output) is 113.43366241455078
-seed 4: error (input) is 156.81249002268063, error (output) is 90.37407684326172
-seed 5: error (input) is 153.93978833267016, error (output) is 83.15190887451172
-seed 6: error (input) is 178.27752671374364, error (output) is 75.9638900756836
-seed 7: error (input) is 155.01705529488646, error (output) is 82.16044616699219
-seed 8: error (input) is 20.73604312047258, error (output) is 12.295209884643555
-seed 9: error (input) is 155.17018535122344, error (output) is 82.0313491821289
-seed 10: error (input) is 178.88771039707385, error (output) is 71.90589904785156
+seed 1: error (input) is 651.1149920574709, error (output) is 793.4232177734375
+seed 2: error (input) is 911.001546713677, error (output) is 662.775146484375
+seed 3: error (input) is 332.1634427422378, error (output) is 775.405029296875
+seed 4: error (input) is 306.71148859595024, error (output) is 384.5595703125
+seed 5: error (input) is 847.7049852241897, error (output) is 926.131103515625
+seed 6: error (input) is 755.7625514257073, error (output) is 985.38330078125
+seed 7: error (input) is 1093.6646539868261, error (output) is 1634.299560546875
+seed 8: error (input) is 169.26887392703074, error (output) is 678.2920532226562
+seed 9: error (input) is 1135.4657480847436, error (output) is 1583.720458984375
+seed 10: error (input) is 862.2092984135048, error (output) is 850.9502563476562

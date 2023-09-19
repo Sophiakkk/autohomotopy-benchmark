@@ -1,0 +1,11 @@
+Evaluation results for GD with shubert:
+seed 1: error (input) is 5.3133960770717374, error (output) is 186.73090882259024
+seed 2: error (input) is 8.754731318753679, error (output) is 186.73090882259032
+seed 3: error (input) is 5.300479910457439, error (output) is 186.73090882259018
+seed 4: error (input) is 11.069597152347873, error (output) is 186.7309088225904
+seed 5: error (input) is 9.24170527057417, error (output) is 177.60789729003352
+seed 6: error (input) is 9.456727659110102, error (output) is 181.26712458632915
+seed 7: error (input) is 9.55243080875061, error (output) is 158.72738403812022
+seed 8: error (input) is 13.403854388564607, error (output) is 186.73090882259044
+seed 9: error (input) is 8.849467594489878, error (output) is 183.5260888882494
+seed 10: error (input) is 11.135466246088606, error (output) is 186.73090882258936

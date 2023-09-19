@@ -1,0 +1,11 @@
+Evaluation results for GD with dropwave:
+seed 1: error (input) is 2.3561944901923626, error (output) is 1.0
+seed 2: error (input) is 4.707392910307867, error (output) is 0.8472295189691674
+seed 3: error (input) is 2.0874610176346993, error (output) is 0.5222155717703398
+seed 4: error (input) is 4.707391885296497, error (output) is 0.8472295189633883
+seed 5: error (input) is 4.974188366375964, error (output) is 1.0
+seed 6: error (input) is 4.183387388360838, error (output) is 0.8141552382963404
+seed 7: error (input) is 5.231356212150117, error (output) is 0.872576254268413
+seed 8: error (input) is 6.279169747168163, error (output) is 0.9079469236197325
+seed 9: error (input) is 5.2313562121506, error (output) is 0.872576254268413
+seed 10: error (input) is 5.497789819722459, error (output) is 0.9999999999698725

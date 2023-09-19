@@ -1,0 +1,11 @@
+Evaluation results for SLGD_r with dropwave:
+seed 1: error (input) is 2.0875417980028104, error (output) is 0.5222156841869705
+seed 2: error (input) is 4.7073425322892, error (output) is 0.8472295323614587
+seed 3: error (input) is 2.087552738979287, error (output) is 0.5222157167005529
+seed 4: error (input) is 4.70732816635928, error (output) is 0.8472295412966833
+seed 5: error (input) is 4.707354691235928, error (output) is 0.8472295265729838
+seed 6: error (input) is 4.183425909196238, error (output) is 0.8141552482262755
+seed 7: error (input) is 5.231419853744107, error (output) is 0.8725762728499189
+seed 8: error (input) is 6.279150405321543, error (output) is 0.9079469248595652
+seed 9: error (input) is 4.707415016620485, error (output) is 0.8472295219065371
+seed 10: error (input) is 5.755287830495973, error (output) is 0.8923227314025626

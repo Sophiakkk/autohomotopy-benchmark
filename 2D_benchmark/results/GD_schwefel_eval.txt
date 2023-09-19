@@ -1,0 +1,11 @@
+Evaluation results for GD with schwefel:
+seed 1: error (input) is 589.8079156023537, error (output) is 563.9746899060609
+seed 2: error (input) is 995.7844380583427, error (output) is 1123.0702198565905
+seed 3: error (input) is 408.50817440722153, error (output) is 612.693590744131
+seed 4: error (input) is 415.8010381631328, error (output) is 417.07465089908936
+seed 5: error (input) is 725.0715925542363, error (output) is 602.7421679773936
+seed 6: error (input) is 563.2701850056645, error (output) is 334.9992324299778
+seed 7: error (input) is 891.2543435620072, error (output) is 1151.971149915064
+seed 8: error (input) is 90.76738670748783, error (output) is 722.0815152345416
+seed 9: error (input) is 1085.4962173609965, error (output) is 347.570045277744
+seed 10: error (input) is 981.1541418480879, error (output) is 144.94881593142185

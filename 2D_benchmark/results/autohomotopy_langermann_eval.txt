@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with langermann:
-seed 1: error (input) is 15.429272153450048, error (output) is 0.18516717055358722
-seed 2: error (input) is 31.350781246245415, error (output) is 0.18516717055358722
-seed 3: error (input) is 14.041528111381309, error (output) is 0.18516927122732005
-seed 4: error (input) is 30.763393772996817, error (output) is 0.18516717055358722
-seed 5: error (input) is 30.36872337846841, error (output) is 0.18516717055358722
-seed 6: error (input) is 28.002351399297396, error (output) is 0.18516717055358722
-seed 7: error (input) is 33.279718988450384, error (output) is 0.18516717055358722
-seed 8: error (input) is 39.265848976055764, error (output) is 0.18516717055358722
-seed 9: error (input) is 32.08835468532694, error (output) is 0.18516717055358722
-seed 10: error (input) is 36.092049724149504, error (output) is 0.18516717055358722
+seed 1: error (input) is 8.549651061542566, error (output) is 1.0806543941135998
+seed 2: error (input) is 5.336693816977127, error (output) is 1.2037862127624601
+seed 3: error (input) is 7.652757384550177, error (output) is 1.106147073969398
+seed 4: error (input) is 4.805683037069472, error (output) is 1.0660891074126675
+seed 5: error (input) is 10.969092760979983, error (output) is 1.0808977038283578
+seed 6: error (input) is 2.7577883462004045, error (output) is 0.8000503518737078
+seed 7: error (input) is 11.419438904618323, error (output) is 1.080938461276542
+seed 8: error (input) is 9.068314690303913, error (output) is 2.4383709891846186
+seed 9: error (input) is 10.519788946063178, error (output) is 1.0808790413130664
+seed 10: error (input) is 2.0207158477145213, error (output) is 0.8116437580382547
