@@ -26,11 +26,24 @@ class NeuralNet(nn.Module):
         self.fc3 = nn.Linear(32, 1)  # 1 output feature: u(t,x)
 
     def forward(self, inputs):
-        x = torch.sigmoid(self.fc1(inputs))
+        x = torch.relu(self.fc1(inputs))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-    
+
+class test_NeuralNet(nn.Module):
+    def __init__(self):
+        super(test_NeuralNet, self).__init__()
+        self.fc1 = nn.Linear(2, 64)  
+        self.fc2 = nn.Linear(64, 32)
+        self.fc3 = nn.Linear(32, 1)  # 1 output feature: u(t,x)
+
+    def forward(self, inputs):
+        x = torch.relu(self.fc1(inputs))
+        x = torch.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
 class AutoHomotopyTrainer(object):
     def __init__(self,
                  net: nn.Module,
@@ -187,6 +200,13 @@ class PINNsTrainer(object):
             print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}, Initial Condition Loss: {initial_condition_loss.item()}")
         
         torch.save(self.net.state_dict(), "./models/{}_{}_T{}.pth".format(self.method, self.init_func_name, self.tmax))
+
+class FICNNsTrainer(object):
+    def __init__(self) -> None:
+        super().__init__()
+
+
+
 
 class GDEvaluator(object):
     def __init__(self,
