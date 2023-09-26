@@ -201,13 +201,6 @@ class PINNsTrainer(object):
         
         torch.save(self.net.state_dict(), "./models/{}_{}_T{}.pth".format(self.method, self.init_func_name, self.tmax))
 
-class FICNNsTrainer(object):
-    def __init__(self) -> None:
-        super().__init__()
-
-
-
-
 class GDEvaluator(object):
     def __init__(self,
                  x_range: np.ndarray,
