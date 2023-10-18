@@ -9,7 +9,7 @@
 #SBATCH --gres=gpu:2
 #SBATCH --array=1-6
 
-config=multiple_config.txt
+config=config.txt
 
 method=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)
 
