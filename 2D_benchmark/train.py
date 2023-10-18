@@ -21,7 +21,7 @@ T = args.max_timestep
 start = timeit.default_timer()
 
 if method_name == 'autohomotopy':
-    algorithm = AutoHomotopyTrainer(net=NeuralNet(), 
+    algorithm = AutoHomotopyTrainer(net=test_NeuralNet(), 
                                     x_range = x_range, 
                                     init_func_name=func_name, 
                                     method = method_name,
