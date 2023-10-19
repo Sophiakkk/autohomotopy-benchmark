@@ -158,7 +158,7 @@ class AutoHomotopyTrainer(object):
                 self.optimizer.step()
                 if epoch % 1000 == 0:
                     print(f"Epoch {epoch}/{self.num_epochs}, Loss: {loss.item()}")
-            conv_u = torch.tensor(gaussian_filter(u.cpu().detach().numpy(),sigma=cov_t,mode='nearest'))
+            conv_u = torch.tensor(gaussian_filter(u.cpu().detach().numpy(),sigma=cov_t,mode='nearest')).to(self.device)
             ut = torch.minimum(conv_u, u).detach()
 
             if t % 10 == 0:
