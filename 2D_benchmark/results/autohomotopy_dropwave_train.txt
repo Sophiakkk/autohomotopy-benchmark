@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: dropwave
 Max Timestep: 50
-Running Time: 93467.65083752805
+Running Time: 863.6223607100546
