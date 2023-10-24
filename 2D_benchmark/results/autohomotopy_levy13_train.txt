@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: levy13
 Max Timestep: 50
-Running Time: 88934.91476084897
+Running Time: 849.3039777325466

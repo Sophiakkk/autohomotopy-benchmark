@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: holdertable
 Max Timestep: 50
-Running Time: 77687.19253727398
+Running Time: 837.3418593918905

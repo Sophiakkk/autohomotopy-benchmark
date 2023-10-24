@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: ackley
 Max Timestep: 50
-Running Time: 865.4464626125991
+Running Time: 841.3075214680284

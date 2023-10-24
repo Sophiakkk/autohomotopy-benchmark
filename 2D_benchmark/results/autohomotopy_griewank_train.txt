@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: griewank
 Max Timestep: 50
-Running Time: 867.5957722375169
+Running Time: 857.5648997342214

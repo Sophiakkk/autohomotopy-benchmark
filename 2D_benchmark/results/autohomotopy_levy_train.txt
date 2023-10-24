@@ -1,4 +1,4 @@
 Method: autohomotopy
 Function: levy
 Max Timestep: 50
-Running Time: 861.2820725459605
+Running Time: 856.0318893361837
