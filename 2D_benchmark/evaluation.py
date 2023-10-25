@@ -16,8 +16,8 @@ args = parser.parse_args()
 
 # Parameters
 seed_list = [1,2,3,4,5,6,7,8,9,10]
-# func_list = ["ackley","bukin","dropwave","eggholder","griewank","langermann","levy","levy13",
-#              "rastrigin","schaffer2","schwefel","tray", "holdertable", "schaffer4", "shubert"]
+func_list = ["ackley","bukin","dropwave","eggholder","griewank","levy","levy13",
+             "rastrigin","schaffer2","schwefel","tray", "holdertable", "schaffer4", "shubert"]
 func_list = ["holdertable"]
 # method_list = ["GD","SLGD_r","SLGD_d","autohomotopy","pinns"]
 method_list = ["SLGD_d"]
@@ -81,7 +81,7 @@ for method_name in method_list:
             with open("./results/{}_{}_eval.txt".format(method_name,func_name), "w") as f:
                 f.write("Evaluation results for {} with {}:\n".format(method_name,func_name))
             for seed in seed_list:
-                eval_net = NeuralNet()
+                eval_net = test_NeuralNet()
                 eval_net.load_state_dict(torch.load("./models/{}_{}_T50_t50.pth".format(method_name,func_name),map_location=torch.device('cpu')))
                 algorithm_evaluator = AutoHomotopy_Evaluator(net=eval_net,
                                                             x_range=x_range, 
