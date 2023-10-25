@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with ackley:
-seed 1: error (input) is 15.429272153450048, error (output) is 20.06610870361328
-seed 2: error (input) is 31.350781246245415, error (output) is 20.613903045654297
-seed 3: error (input) is 14.041528111381309, error (output) is 19.398273468017578
-seed 4: error (input) is 30.763393772996817, error (output) is 21.437911987304688
-seed 5: error (input) is 30.36872337846841, error (output) is 21.492435455322266
-seed 6: error (input) is 28.002351399297396, error (output) is 20.708538055419922
-seed 7: error (input) is 33.279718988450384, error (output) is 21.740558624267578
-seed 8: error (input) is 39.265848976055764, error (output) is 22.10736846923828
-seed 9: error (input) is 32.08835468532694, error (output) is 20.3150634765625
-seed 10: error (input) is 36.092049724149504, error (output) is 21.871549606323242
+seed 1: error (input) is 15.351154152349407, error (output) is 19.970352172851562
+seed 2: error (input) is 31.275814835988193, error (output) is 20.55176544189453
+seed 3: error (input) is 13.967989631204494, error (output) is 19.449462890625
+seed 4: error (input) is 30.668752569722, error (output) is 21.542953491210938
+seed 5: error (input) is 30.288617737953423, error (output) is 21.097646713256836
+seed 6: error (input) is 27.91720360915046, error (output) is 21.045101165771484
+seed 7: error (input) is 33.22146669284385, error (output) is 21.833993911743164
+seed 8: error (input) is 39.19732673342429, error (output) is 22.170028686523438
+seed 9: error (input) is 32.012107331445684, error (output) is 20.206697463989258
+seed 10: error (input) is 36.00686386600074, error (output) is 21.829837799072266

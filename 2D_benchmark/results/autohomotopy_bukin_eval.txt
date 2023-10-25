@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with bukin:
-seed 1: error (input) is 0.9031617021132101, error (output) is 46.68717956542969
-seed 2: error (input) is 3.895006809158897, error (output) is 199.35948181152344
-seed 3: error (input) is 0.6226957399670218, error (output) is 65.93978881835938
-seed 4: error (input) is 4.7355968844135585, error (output) is 34.61257553100586
-seed 5: error (input) is 3.0381128821593153, error (output) is 77.58479309082031
-seed 6: error (input) is 4.418076915243572, error (output) is 118.34812927246094
-seed 7: error (input) is 4.294643434458503, error (output) is 62.3371467590332
-seed 8: error (input) is 4.237036433614794, error (output) is 159.79693603515625
-seed 9: error (input) is 4.996187183138423, error (output) is 148.81854248046875
-seed 10: error (input) is 4.731629909637836, error (output) is 184.50978088378906
+seed 1: error (input) is 2.792587995023872, error (output) is 15.134931564331055
+seed 2: error (input) is 0.364256950868942, error (output) is 56.50510025024414
+seed 3: error (input) is 1.5482144939086704, error (output) is 111.5441665649414
+seed 4: error (input) is 4.426143659250081, error (output) is 21.542266845703125
+seed 5: error (input) is 5.777453665164708, error (output) is 98.29864501953125
+seed 6: error (input) is 4.415436286795703, error (output) is 18.38987159729004
+seed 7: error (input) is 44.51475466889147, error (output) is 428.4388122558594
+seed 8: error (input) is 3.4990728769284454, error (output) is 134.49337768554688
+seed 9: error (input) is 7.226737144997098, error (output) is 101.16419982910156
+seed 10: error (input) is 3.3488729973262448, error (output) is 11.862409591674805

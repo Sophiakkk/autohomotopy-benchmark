@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with rastrigin:
-seed 1: error (input) is 2.410823768724657, error (output) is 20.334367752075195
-seed 2: error (input) is 4.898559624807112, error (output) is 43.49028015136719
-seed 3: error (input) is 2.19398885249467, error (output) is 27.95386505126953
-seed 4: error (input) is 4.806780097624957, error (output) is 51.031639099121094
-seed 5: error (input) is 4.745112908680763, error (output) is 33.93440246582031
-seed 6: error (input) is 4.375367625351805, error (output) is 31.08835220336914
-seed 7: error (input) is 5.199956223368689, error (output) is 45.64612579345703
-seed 8: error (input) is 6.1352887255249, error (output) is 50.200782775878906
-seed 9: error (input) is 5.01380541957966, error (output) is 25.248289108276367
-seed 10: error (input) is 5.63938293186677, error (output) is 41.67430877685547
+seed 1: error (input) is 1.9387518162254556, error (output) is 21.540447235107422
+seed 2: error (input) is 4.5965101492437475, error (output) is 60.176910400390625
+seed 3: error (input) is 1.7656805911997164, error (output) is 17.30868148803711
+seed 4: error (input) is 3.68653846888605, error (output) is 49.397560119628906
+seed 5: error (input) is 3.745077683339544, error (output) is 26.696592330932617
+seed 6: error (input) is 3.2649161854571194, error (output) is 30.16232681274414
+seed 7: error (input) is 4.1944536322855255, error (output) is 54.32666015625
+seed 8: error (input) is 5.057719685522103, error (output) is 26.264902114868164
+seed 9: error (input) is 4.150434147198283, error (output) is 32.10175704956055
+seed 10: error (input) is 4.461054211620071, error (output) is 41.82004165649414

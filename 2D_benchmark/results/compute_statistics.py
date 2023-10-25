@@ -2,8 +2,10 @@ import re
 import numpy as np
 import math
 
-method_list = ['GD','SLGD_r','SLGD_d','autohomotopy','pinns']
-func_list = ["ackley","bukin","dropwave","eggholder","griewank","langermann","levy",
+# method_list = ['GD','SLGD_r','SLGD_d','autohomotopy','pinns']
+method_list = ['autohomotopy']
+func_list = ["ackley","bukin","dropwave","eggholder",
+             "griewank","levy",
              "levy13","rastrigin","schaffer2","schwefel",
              "tray", "holdertable", "schaffer4", "shubert"]
 seed_list = [1,2,3,4,5,6,7,8,9,10]
@@ -27,7 +29,7 @@ for method in method_list:
                 std_error_x = '%.4g'%np.std(metric_list_x)
                 avg_error_y = '%.4g'%np.mean(metric_list_y)
                 std_error_y = '%.4g'%np.std(metric_list_y)
-        with open('summary_all.txt', 'a') as file:
+        with open('summary_autohomotopy.txt', 'a') as file:
             file.writelines('Senario: ' + method + ' on function ' + func + '\n')
             file.writelines('avg error (input): ' + avg_error_x + '\n')
             file.writelines('std error (input): ' + std_error_x + '\n')

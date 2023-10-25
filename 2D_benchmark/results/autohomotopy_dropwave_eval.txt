@@ -1,11 +1,11 @@
 Evaluation results for autohomotopy with dropwave:
-seed 1: error (input) is 2.410823768724657, error (output) is 0.957748293876648
-seed 2: error (input) is 4.898559624807112, error (output) is 0.9725446701049805
-seed 3: error (input) is 2.19398885249467, error (output) is 0.6898203492164612
-seed 4: error (input) is 4.806780097624957, error (output) is 0.8949115872383118
-seed 5: error (input) is 4.745112908680763, error (output) is 0.8548892736434937
-seed 6: error (input) is 4.375367625351805, error (output) is 0.9671204090118408
-seed 7: error (input) is 5.199956223368689, error (output) is 0.8770618438720703
-seed 8: error (input) is 6.1352887255249, error (output) is 0.9616994857788086
-seed 9: error (input) is 5.01380541957966, error (output) is 0.9923885464668274
-seed 10: error (input) is 5.63938293186677, error (output) is 0.9369879961013794
+seed 1: error (input) is 2.3855708293322535, error (output) is 0.9873090386390686
+seed 2: error (input) is 4.871557819213887, error (output) is 0.951879620552063
+seed 3: error (input) is 2.1785391650652506, error (output) is 0.6496485471725464
+seed 4: error (input) is 4.782849340077777, error (output) is 0.8762195706367493
+seed 5: error (input) is 4.722701807170167, error (output) is 0.8485128879547119
+seed 6: error (input) is 4.34978405276497, error (output) is 0.9435730576515198
+seed 7: error (input) is 5.174843680060023, error (output) is 0.8867615461349487
+seed 8: error (input) is 6.114430747596343, error (output) is 0.9728797078132629
+seed 9: error (input) is 4.989958758382415, error (output) is 0.9987644553184509
+seed 10: error (input) is 5.615114189592687, error (output) is 0.9528365135192871

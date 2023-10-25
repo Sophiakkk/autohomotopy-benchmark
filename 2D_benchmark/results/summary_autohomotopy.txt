@@ -1,0 +1,84 @@
+Senario: autohomotopy on function ackley
+avg error (input): 28.99
+std error (input): 7.765
+avg error (output): 20.97
+std error (output): 0.857
+-----------------------------------------
+Senario: autohomotopy on function bukin
+avg error (input): 7.791
+std error (input): 12.38
+avg error (output): 99.74
+std error (output): 117.8
+-----------------------------------------
+Senario: autohomotopy on function dropwave
+avg error (input): 4.519
+std error (input): 1.212
+avg error (output): 0.9068
+std error (output): 0.09781
+-----------------------------------------
+Senario: autohomotopy on function eggholder
+avg error (input): 704.1
+std error (input): 297.6
+avg error (output): 960.3
+std error (output): 447.5
+-----------------------------------------
+Senario: autohomotopy on function griewank
+avg error (input): 532.3
+std error (input): 142.2
+avg error (output): 76.84
+std error (output): 33.33
+-----------------------------------------
+Senario: autohomotopy on function levy
+avg error (input): 8.983
+std error (input): 3.502
+avg error (output): 40.39
+std error (output): 36.47
+-----------------------------------------
+Senario: autohomotopy on function levy13
+avg error (input): 6.156
+std error (input): 2.817
+avg error (output): 63.33
+std error (output): 39.74
+-----------------------------------------
+Senario: autohomotopy on function rastrigin
+avg error (input): 3.686
+std error (input): 1.035
+avg error (output): 35.98
+std error (output): 13.87
+-----------------------------------------
+Senario: autohomotopy on function schaffer2
+avg error (input): 88.71
+std error (input): 23.7
+avg error (output): 0.5027
+std error (output): 0.01304
+-----------------------------------------
+Senario: autohomotopy on function schwefel
+avg error (input): 646.3
+std error (input): 296.8
+avg error (output): 756.2
+std error (output): 339.2
+-----------------------------------------
+Senario: autohomotopy on function tray
+avg error (input): N/A
+std error (input): N/A
+avg error (output): N/A
+std error (output): N/A
+-----------------------------------------
+Senario: autohomotopy on function holdertable
+avg error (input): 15.25
+std error (input): 4.446
+avg error (output): 28.97
+std error (output): 39.06
+-----------------------------------------
+Senario: autohomotopy on function schaffer4
+avg error (input): 88.76
+std error (input): 23.77
+avg error (output): 0.2085
+std error (output): 0.008012
+-----------------------------------------
+Senario: autohomotopy on function shubert
+avg error (input): 8.757
+std error (input): 2.154
+avg error (output): 189.5
+std error (output): 23.45
+-----------------------------------------
