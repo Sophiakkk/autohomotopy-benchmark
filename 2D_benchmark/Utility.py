@@ -550,7 +550,7 @@ class AutoHomotopy_Evaluator(object):
         self.initial_x = np.random.uniform(self.xmin, self.xmax, size=(1,2))
 
     def get_grad(self, x):
-        input = x.clone.requires_grad_(True)
+        input = x.clone().requires_grad_(True)
         u = self.net(input)
         with torch.no_grad():
             grad_x = torch.autograd.grad(u, input)[0][0][:2]

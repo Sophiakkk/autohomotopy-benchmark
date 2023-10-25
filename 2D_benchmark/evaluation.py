@@ -18,9 +18,9 @@ args = parser.parse_args()
 seed_list = [1,2,3,4,5,6,7,8,9,10]
 func_list = ["ackley","bukin","dropwave","eggholder","griewank","levy","levy13",
              "rastrigin","schaffer2","schwefel","tray", "holdertable", "schaffer4", "shubert"]
-func_list = ["holdertable"]
+# func_list = ["holdertable"]
 # method_list = ["GD","SLGD_r","SLGD_d","autohomotopy","pinns"]
-method_list = ["SLGD_d"]
+method_list = ["autohomotopy"]
 total_iterations = args.num_iter
 step_size = args.step_size
 
